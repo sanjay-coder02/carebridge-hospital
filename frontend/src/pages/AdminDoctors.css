@@ -1,0 +1,318 @@
+/* frontend/src/pages/AdminDoctors.css */
+
+.admin-doctors-page {
+    min-height: 70vh;
+    background: #e3eeec;
+}
+
+.admin-doctors-header {
+    padding: 45px 0 38px;
+    background: linear-gradient(
+        135deg,
+        #d5e4e1 0%,
+        #e3eeec 100%
+    );
+    border-bottom: 1px solid var(--carebridge-border);
+}
+
+.admin-doctors-label {
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.admin-doctors-header h1 {
+    margin: 8px 0 10px;
+    color: var(--carebridge-navy);
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 750;
+}
+
+.admin-doctors-header p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.admin-doctors-add-button {
+    min-height: 46px;
+    padding: 0 21px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-doctors-add-button:hover {
+    background: var(--carebridge-primary-dark);
+}
+
+.admin-doctors-content {
+    padding: 35px 0 70px;
+}
+
+.doctors-table-card {
+    overflow: hidden;
+    border: 2px solid #3f8586;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.10);
+}
+
+.doctors-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #c9ddda;
+}
+
+.doctors-table-heading span {
+    color: var(--carebridge-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.doctors-table-heading h2 {
+    margin: 5px 0 0;
+    color: var(--carebridge-navy);
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.doctor-count {
+    min-width: 70px;
+    padding: 8px 14px;
+    border: 1px solid #b9d6d2;
+    border-radius: 20px;
+    background: #e7f3f1;
+    color: var(--carebridge-primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.doctors-table-wrapper {
+    overflow-x: auto;
+}
+
+.doctors-table {
+    width: 100%;
+    min-width: 950px;
+    margin: 0;
+    border-collapse: collapse;
+    background: #ffffff !important;
+}
+
+.doctors-table thead {
+    background: #f7fbfa !important;
+}
+
+.doctors-table thead th {
+    padding: 15px 18px;
+    color: #315b6c;
+    background: #f7fbfa !important;
+    border-bottom: 1px solid #c9ddda;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.doctors-table tbody {
+    background: #ffffff !important;
+}
+
+.doctors-table tbody tr {
+    background: #ffffff !important;
+}
+
+.doctors-table tbody tr:hover {
+    background: #f8fcfb !important;
+}
+
+.doctors-table tbody td {
+    padding: 17px 18px;
+    color: #32627a;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e1ecea;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.doctors-table tbody tr:hover td {
+    background: #f8fcfb !important;
+}
+
+.doctors-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.doctors-table tbody td strong {
+    color: var(--carebridge-navy);
+    font-weight: 750;
+}
+
+.doctor-id {
+    color: var(--carebridge-primary) !important;
+    font-weight: 800 !important;
+}
+
+.specialization-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border: 1px solid #8fbfba;
+    border-radius: 8px;
+    color: var(--carebridge-primary);
+    background: #e8f4f2 !important;
+    font-size: 11px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.doctor-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.edit-doctor-button,
+.delete-doctor-button {
+    min-height: 34px;
+    padding: 5px 11px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.edit-doctor-button {
+    color: var(--carebridge-primary);
+    border: 1px solid #8fbfba;
+    background: #e9f6f4;
+}
+
+.edit-doctor-button:hover {
+    color: #ffffff;
+    border-color: var(--carebridge-primary);
+    background: var(--carebridge-primary);
+}
+
+.delete-doctor-button {
+    color: #a13f3f;
+    border: 1px solid #e3aaaa;
+    background: #fff1f1;
+}
+
+.delete-doctor-button:hover {
+    color: #ffffff;
+    border-color: #a13f3f;
+    background: #a13f3f;
+}
+
+.doctors-empty-state {
+    padding: 65px 30px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.doctors-empty-state strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--carebridge-navy);
+    font-size: 19px;
+}
+
+.doctors-empty-state p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 14px;
+}
+
+.modal-title {
+    color: var(--carebridge-navy);
+    font-weight: 750;
+}
+
+.modal-body {
+    padding: 28px;
+}
+
+.modal-footer {
+    padding: 18px 28px;
+    border-top: 1px solid var(--carebridge-border);
+}
+
+.modal-body .form-label {
+    margin-bottom: 7px;
+    color: var(--carebridge-text);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+    min-height: 46px;
+    border-color: #cfe1df;
+    border-radius: 9px;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+    border-color: var(--carebridge-primary);
+    box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.12);
+}
+
+.save-doctor-button {
+    min-height: 42px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.save-doctor-button:hover {
+    background: var(--carebridge-primary-dark);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 767px) {
+    .admin-doctors-header {
+        padding: 38px 0;
+    }
+
+    .admin-doctors-header .row {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .admin-doctors-content {
+        padding: 28px 0 55px;
+    }
+
+    .doctors-table-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+    }
+
+    .doctors-table {
+        min-width: 900px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}

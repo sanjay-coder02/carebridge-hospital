@@ -1,0 +1,319 @@
+/* frontend/src/pages/AdminPatients.css */
+
+.admin-patients-page {
+    min-height: 70vh;
+    background: #e3eeec;
+}
+
+.admin-patients-header {
+    padding: 45px 0 38px;
+    background: linear-gradient(
+        135deg,
+        #d5e4e1 0%,
+        #e3eeec 100%
+    );
+    border-bottom: 1px solid var(--carebridge-border);
+}
+
+.admin-page-label {
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.admin-patients-header h1 {
+    margin: 8px 0 10px;
+    color: var(--carebridge-navy);
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 750;
+}
+
+.admin-patients-header p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.admin-add-button {
+    min-height: 46px;
+    padding: 0 21px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-add-button:hover {
+    background: var(--carebridge-primary-dark);
+}
+
+.admin-patients-content {
+    padding: 35px 0 70px;
+}
+
+.patients-table-card {
+    overflow: hidden;
+    border: 2px solid #3f8586;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.10);
+}
+
+.patients-table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #c9ddda;
+}
+
+.patients-table-heading span {
+    color: var(--carebridge-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.patients-table-heading h2 {
+    margin: 5px 0 0;
+    color: var(--carebridge-navy);
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.patient-count {
+    min-width: 70px;
+    padding: 8px 14px;
+    border: 1px solid #b9d6d2;
+    border-radius: 20px;
+    background: #e7f3f1;
+    color: var(--carebridge-primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.patients-table-wrapper {
+    overflow-x: auto;
+}
+
+.patients-table {
+    width: 100%;
+    min-width: 1050px;
+    margin: 0;
+    border-collapse: collapse;
+    background: #ffffff !important;
+}
+
+.patients-table thead {
+    background: #f7fbfa !important;
+}
+
+.patients-table thead th {
+    padding: 15px 18px;
+    color: #315b6c;
+    background: #f7fbfa !important;
+    border-bottom: 1px solid #c9ddda;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.patients-table tbody {
+    background: #ffffff !important;
+}
+
+.patients-table tbody tr {
+    background: #ffffff !important;
+}
+
+.patients-table tbody tr:hover {
+    background: #f8fcfb !important;
+}
+
+.patients-table tbody td {
+    padding: 17px 18px;
+    color: #32627a;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e1ecea;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.patients-table tbody tr:hover td {
+    background: #f8fcfb !important;
+}
+
+.patients-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.patients-table tbody td strong {
+    color: var(--carebridge-navy);
+    font-weight: 750;
+}
+
+.patient-id {
+    color: var(--carebridge-primary) !important;
+    font-weight: 800 !important;
+}
+
+.blood-group {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    padding: 6px 9px;
+    border: 1px solid #e6baba;
+    border-radius: 8px;
+    color: #a13f3f;
+    background: #fff0f0 !important;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.patient-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.edit-patient-button,
+.delete-patient-button {
+    min-height: 34px;
+    padding: 5px 11px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.edit-patient-button {
+    color: var(--carebridge-primary);
+    border: 1px solid #8fbfba;
+    background: #e9f6f4;
+}
+
+.edit-patient-button:hover {
+    color: #ffffff;
+    border-color: var(--carebridge-primary);
+    background: var(--carebridge-primary);
+}
+
+.delete-patient-button {
+    color: #a13f3f;
+    border: 1px solid #e3aaaa;
+    background: #fff1f1;
+}
+
+.delete-patient-button:hover {
+    color: #ffffff;
+    border-color: #a13f3f;
+    background: #a13f3f;
+}
+
+.patients-empty-state {
+    padding: 65px 30px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.patients-empty-state strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--carebridge-navy);
+    font-size: 19px;
+}
+
+.patients-empty-state p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 14px;
+}
+
+.modal-title {
+    color: var(--carebridge-navy);
+    font-weight: 750;
+}
+
+.modal-body {
+    padding: 28px;
+}
+
+.modal-footer {
+    padding: 18px 28px;
+    border-top: 1px solid var(--carebridge-border);
+}
+
+.modal-body .form-label {
+    margin-bottom: 7px;
+    color: var(--carebridge-text);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+    min-height: 46px;
+    border-color: #cfe1df;
+    border-radius: 9px;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+    border-color: var(--carebridge-primary);
+    box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.12);
+}
+
+.save-patient-button {
+    min-height: 42px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.save-patient-button:hover {
+    background: var(--carebridge-primary-dark);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 767px) {
+    .admin-patients-header {
+        padding: 38px 0;
+    }
+
+    .admin-patients-header .row {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .admin-patients-content {
+        padding: 28px 0 55px;
+    }
+
+    .patients-table-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+    }
+
+    .patients-table {
+        min-width: 950px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}

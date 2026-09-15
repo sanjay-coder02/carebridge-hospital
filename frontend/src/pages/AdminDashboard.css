@@ -1,0 +1,312 @@
+/* frontend/src/pages/AdminDashboard.css */
+
+.admin-dashboard-page {
+    min-height: calc(100vh - 80px);
+    padding: 42px 0 65px;
+    background: #d5e4e1;
+}
+
+/* HEADER */
+
+.admin-dashboard-header {
+    margin-bottom: 30px;
+}
+
+.admin-dashboard-header-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.admin-dashboard-header span {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--carebridge-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.admin-dashboard-header h1 {
+    margin: 0 0 9px;
+    color: var(--carebridge-navy);
+    font-size: 42px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.admin-dashboard-header p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* LOGOUT */
+
+.admin-logout-button {
+    min-width: 105px;
+    min-height: 45px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.admin-logout-button:hover,
+.admin-logout-button:focus,
+.admin-logout-button:active {
+    border: 0 !important;
+    background: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+}
+
+/* ALERT */
+
+.admin-dashboard-alert {
+    margin-bottom: 24px;
+    border-radius: 10px;
+}
+
+/* STATISTICS */
+
+.admin-stats-row {
+    margin-bottom: 0;
+}
+
+.admin-stat-card {
+    height: 100%;
+    min-height: 118px;
+    border: 2px solid #3f8586;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow:
+        0 10px 26px rgba(18, 59, 93, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 30px rgba(18, 59, 93, 0.13);
+}
+
+.admin-stat-card .card-body {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 22px;
+}
+
+.admin-stat-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #9fc7c1;
+    border-radius: 13px;
+    background: #c9dfdb;
+    color: var(--carebridge-navy);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.admin-stat-content {
+    min-width: 0;
+}
+
+.admin-stat-card span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--carebridge-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin-stat-card strong {
+    display: block;
+    color: var(--carebridge-navy);
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1;
+}
+
+/* MANAGEMENT */
+
+.admin-management-card {
+    margin-top: 34px;
+    padding: 34px;
+    border: 2px solid #3f8586;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:
+        0 12px 32px rgba(18, 59, 93, 0.08);
+}
+
+.admin-management-heading {
+    margin-bottom: 25px;
+}
+
+.admin-management-heading > span {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.admin-management-heading h2 {
+    margin: 0 0 7px;
+    color: var(--carebridge-navy);
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.admin-management-heading p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* MODULE CARDS */
+
+.admin-module-card {
+    width: 100%;
+    min-height: 155px;
+    padding: 25px;
+    border: 2px solid #3f8586;
+    border-radius: 16px;
+    background: #ffffff;
+    color: var(--carebridge-text);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow:
+        0 8px 22px rgba(18, 59, 93, 0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.admin-module-card:hover {
+    border-color: var(--carebridge-primary);
+    background: #f8fcfb;
+    transform: translateY(-4px);
+    box-shadow:
+        0 14px 30px rgba(18, 59, 93, 0.12);
+}
+
+.admin-module-card:focus-visible {
+    outline: 3px solid rgba(15, 118, 110, 0.18);
+    outline-offset: 3px;
+}
+
+.admin-module-content strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--carebridge-navy);
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.admin-module-content small {
+    display: block;
+    max-width: 300px;
+    color: var(--carebridge-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.admin-module-link {
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 750;
+    transition: transform 0.2s ease;
+}
+
+.admin-module-card:hover .admin-module-link {
+    transform: translateX(4px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991.98px) {
+    .admin-dashboard-page {
+        padding: 38px 0 55px;
+    }
+
+    .admin-dashboard-header h1 {
+        font-size: 38px;
+    }
+
+    .admin-management-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .admin-dashboard-page {
+        padding: 30px 0 45px;
+    }
+
+    .admin-dashboard-header-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-dashboard-header h1 {
+        font-size: 34px;
+    }
+
+    .admin-logout-button {
+        width: 100%;
+    }
+
+    .admin-management-card {
+        margin-top: 28px;
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .admin-management-heading h2 {
+        font-size: 27px;
+    }
+
+    .admin-module-card {
+        min-height: 145px;
+        padding: 23px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin-dashboard-header h1 {
+        font-size: 31px;
+    }
+
+    .admin-stat-card .card-body {
+        padding: 19px;
+    }
+
+    .admin-management-card {
+        padding: 22px 16px;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${patient.id == null ? 'Add Patient' : 'Edit Patient'}">
+        Patient
+    </title>
+</head>
+<body>
+
+    <h1 th:text="${patient.id == null ? 'Add Patient' : 'Edit Patient'}">
+        Patient
+    </h1>
+
+    <form th:action="@{/patients}" th:object="${patient}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required>
+
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" th:field="*{age}" required>
+
+        <br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" th:field="*{gender}" required>
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" th:field="*{phone}" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}">
+
+        <br><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" th:field="*{location}">
+
+        <br><br>
+
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" th:field="*{bloodGroup}">
+
+        <br><br>
+
+        <button type="submit"
+                th:text="${patient.id == null ? 'Save Patient' : 'Update Patient'}">
+            Save Patient
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/patients">Back to Patients</a>
+
+</body>
+</html>

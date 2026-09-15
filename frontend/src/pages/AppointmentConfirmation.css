@@ -1,0 +1,382 @@
+
+
+/* CONFIRMATION PAGE*/
+
+.appointment-confirmation-page {
+    min-height: calc(100vh - 80px);
+    background: #e3eeec;
+}
+
+
+/*  CONFIRMATION SECTION */
+
+.confirmation-section {
+    min-height: calc(100vh - 80px);
+    padding: 58px 0 72px;
+    display: flex;
+    align-items: center;
+    background: #e3eeec;
+}
+
+
+/* CONFIRMATION CARD */
+
+.confirmation-card {
+    width: min(820px, 100%);
+    margin: 0 auto;
+    padding: 42px 50px;
+    border: 2px solid #7daaa6;
+    border-radius: 22px;
+    background: #c4dcda;
+    box-shadow:
+        0 10px 26px rgba(18, 59, 93, 0.10);
+    text-align: center;
+}
+
+
+/* SUCCESS ICON */
+
+.confirmation-success-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #6fa29e;
+    border-radius: 50%;
+    background: #eaf4f2;
+    color: var(--carebridge-primary);
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* INFORMATION ICON */
+
+.confirmation-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #86aaa7;
+    border-radius: 15px;
+    background: #eaf4f2;
+    color: var(--carebridge-primary);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+/*   LABEL  */
+
+.confirmation-label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.confirmation-card h1 {
+    max-width: 700px;
+    margin: 0 auto 14px;
+    color: var(--carebridge-navy);
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.confirmation-message {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: #426875;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* APPOINTMENT DETAILS */
+
+.confirmation-details {
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #7daaa6;
+    border-radius: 13px;
+    background: #edf6f4;
+    text-align: left;
+}
+
+.confirmation-detail {
+    min-height: 57px;
+    padding: 13px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid #c4d9d6;
+}
+
+.confirmation-detail:last-child {
+    border-bottom: 0;
+}
+
+.confirmation-detail span {
+    color: #58717d;
+    font-size: 14px;
+}
+
+.confirmation-detail strong {
+    color: var(--carebridge-navy);
+    font-size: 14px;
+    font-weight: 750;
+    text-align: right;
+}
+
+
+/*  STATUS BADGES */
+
+.confirmation-status {
+    min-width: 105px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.3px;
+}
+
+.confirmation-status.pending {
+    background: #fff3d6;
+    color: #a76500 !important;
+}
+
+.confirmation-status.confirmed {
+    background: #e2f6ed;
+    color: #087443 !important;
+}
+
+.confirmation-status.cancelled {
+    background: #fde8e8;
+    color: #b42318 !important;
+}
+
+.confirmation-status.completed {
+    background: #dcefeb;
+    color: #0f766e !important;
+}
+
+
+/* STATUS CHECK SECTION */
+
+.confirmation-status-section {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px solid #7daaa6;
+    border-radius: 12px;
+    background: #dcebe8;
+    text-align: center;
+}
+
+.confirmation-status-section p {
+    margin: 0 0 13px;
+    color: #58717d;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.confirmation-status-button {
+    min-height: 44px;
+    padding: 9px 22px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 9px !important;
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.confirmation-status-button:hover {
+    background: var(--carebridge-primary-dark) !important;
+    border-color: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(15, 118, 110, 0.18);
+}
+
+.confirmation-status-button:disabled {
+    background: #8aaba7 !important;
+    border-color: #8aaba7 !important;
+    transform: none;
+    box-shadow: none;
+}
+
+.confirmation-status-message {
+    display: block;
+    margin-top: 9px;
+    color: var(--carebridge-primary);
+    font-size: 12px;
+}
+
+
+/* ACTION BUTTONS */
+
+.confirmation-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.confirmation-primary-button,
+.confirmation-secondary-button {
+    min-height: 48px;
+    padding: 11px 23px !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.confirmation-primary-button {
+    border: 2px solid var(--carebridge-primary) !important;
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+}
+
+.confirmation-primary-button:hover {
+    border-color: var(--carebridge-primary-dark) !important;
+    background: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 9px 19px rgba(15, 118, 110, 0.18);
+}
+
+.confirmation-secondary-button {
+    border: 2px solid #7daaa6 !important;
+    background: #edf6f4 !important;
+    color: var(--carebridge-primary) !important;
+}
+
+.confirmation-secondary-button:hover {
+    border-color: var(--carebridge-primary) !important;
+    background: #dcefeb !important;
+    color: var(--carebridge-primary-dark) !important;
+    transform: translateY(-2px);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .confirmation-section {
+        padding: 52px 0 64px;
+    }
+
+    .confirmation-card {
+        padding: 38px 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .confirmation-section {
+        padding: 40px 0 55px;
+    }
+
+    .confirmation-card {
+        padding: 34px 24px;
+        border-radius: 18px;
+    }
+
+    .confirmation-card h1 {
+        font-size: 31px;
+    }
+
+    .confirmation-message {
+        font-size: 14px;
+    }
+
+    .confirmation-detail {
+        padding: 12px 16px;
+        gap: 15px;
+    }
+
+    .confirmation-detail span,
+    .confirmation-detail strong {
+        font-size: 12px;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .confirmation-primary-button,
+    .confirmation-secondary-button,
+    .confirmation-status-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .confirmation-section {
+        padding: 32px 0 48px;
+    }
+
+    .confirmation-card {
+        padding: 28px 17px;
+        border-radius: 16px;
+    }
+
+    .confirmation-success-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 30px;
+    }
+
+    .confirmation-card h1 {
+        font-size: 28px;
+    }
+
+    .confirmation-detail {
+        min-height: 54px;
+        padding: 11px 13px;
+        gap: 10px;
+    }
+
+    .confirmation-status {
+        min-width: 90px;
+        padding: 6px 9px;
+    }
+}

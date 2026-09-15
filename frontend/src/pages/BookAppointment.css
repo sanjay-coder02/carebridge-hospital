@@ -1,0 +1,296 @@
+/* frontend/src/pages/BookAppointment.css */
+
+
+/* ================================
+   BOOK APPOINTMENT PAGE
+================================ */
+
+.book-appointment-page {
+    background: var(--carebridge-background);
+}
+
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.book-appointment-header {
+    padding: 68px 0 64px;
+    background: #d5e4e1;
+    border-bottom: 1px solid #b0cfcc;
+}
+
+.book-appointment-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.book-appointment-header-content span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.book-appointment-header-content h1 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.book-appointment-header-content p {
+    max-width: 700px;
+    margin: 17px auto 0;
+    color: #58717d;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   APPOINTMENT SECTION
+================================ */
+
+.book-appointment-section {
+    padding: 70px 0 82px;
+    background: #e3eeec;
+}
+
+
+/* ================================
+   FORM CARD
+================================ */
+
+.appointment-form-card {
+    padding: 42px;
+    border: 2px solid #7daaa6;
+    border-radius: 22px;
+    background: #c4dcda;
+    box-shadow:
+        0 10px 26px rgba(18, 59, 93, 0.10);
+}
+
+
+/* ================================
+   FORM SECTIONS
+================================ */
+
+.appointment-form-section {
+    padding-bottom: 34px;
+    margin-bottom: 34px;
+    border-bottom: 1px solid #7daaa6;
+}
+
+.appointment-form-section:last-of-type {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.appointment-form-section h2 {
+    margin: 0 0 24px;
+    color: var(--carebridge-navy);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+
+/* ================================
+   FORM LABELS
+================================ */
+
+.appointment-form-card .form-label {
+    margin-bottom: 8px;
+    color: var(--carebridge-navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   FORM CONTROLS
+================================ */
+
+.appointment-form-card .form-control,
+.appointment-form-card .form-select {
+    min-height: 50px;
+    padding: 11px 14px;
+    color: var(--carebridge-text);
+    border: 2px solid #9bbab6;
+    border-radius: 10px;
+    background-color: #edf6f4;
+    font-size: 15px;
+    box-shadow: none;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.appointment-form-card textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.appointment-form-card .form-control::placeholder {
+    color: #78919a;
+}
+
+.appointment-form-card .form-control:hover,
+.appointment-form-card .form-select:hover {
+    border-color: #78a39f;
+    background-color: #f2f8f7;
+}
+
+.appointment-form-card .form-control:focus,
+.appointment-form-card .form-select:focus {
+    border-color: var(--carebridge-primary);
+    background-color: #ffffff;
+    box-shadow:
+        0 0 0 3px rgba(15, 118, 110, 0.10);
+}
+
+.appointment-form-card .form-control:disabled,
+.appointment-form-card .form-select:disabled {
+    background-color: #dceae8;
+    opacity: 0.8;
+}
+
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+
+.appointment-submit-button {
+    width: 100%;
+    min-height: 54px;
+    padding: 13px 20px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 11px !important;
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 750 !important;
+    box-shadow:
+        0 9px 20px rgba(15, 118, 110, 0.16);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.appointment-submit-button:hover {
+    background: var(--carebridge-primary-dark) !important;
+    border-color: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 13px 26px rgba(15, 118, 110, 0.22);
+}
+
+.appointment-submit-button:active {
+    transform: translateY(0);
+}
+
+.appointment-submit-button:disabled {
+    background: #8aaba7 !important;
+    border-color: #8aaba7 !important;
+    color: #ffffff !important;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* ================================
+   ALERT
+================================ */
+
+.book-appointment-section .alert {
+    margin-bottom: 30px;
+    border: 1px solid #d9aaa6;
+    border-radius: 12px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 991px) {
+    .book-appointment-header {
+        padding: 60px 0 56px;
+    }
+
+    .book-appointment-section {
+        padding: 62px 0 72px;
+    }
+
+    .appointment-form-card {
+        padding: 36px;
+    }
+}
+
+@media (max-width: 767px) {
+    .book-appointment-header {
+        padding: 54px 0 50px;
+    }
+
+    .book-appointment-section {
+        padding: 52px 0 65px;
+    }
+
+    .appointment-form-card {
+        padding: 28px 24px;
+        border-radius: 18px;
+    }
+
+    .appointment-form-section {
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+    }
+
+    .appointment-form-section h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 575px) {
+    .book-appointment-header {
+        padding: 46px 0 44px;
+    }
+
+    .book-appointment-header-content h1 {
+        font-size: 36px;
+    }
+
+    .book-appointment-header-content p {
+        font-size: 15px;
+    }
+
+    .book-appointment-section {
+        padding: 40px 0 55px;
+    }
+
+    .appointment-form-card {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .appointment-form-card .form-control,
+    .appointment-form-card .form-select {
+        min-height: 48px;
+    }
+
+    .appointment-form-section h2 {
+        font-size: 21px;
+    }
+}

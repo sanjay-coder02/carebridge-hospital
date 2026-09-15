@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Appointment</title>
+</head>
+
+<body>
+
+    <h1>Add Appointment</h1>
+
+    <form th:action="@{/appointments}"
+          th:object="${appointment}"
+          method="post">
+
+        <label for="patient">Patient:</label>
+
+        <select id="patient"
+                name="patient.id"
+                required>
+
+            <option value="">Select Patient</option>
+
+            <option th:each="patient : ${patients}"
+                    th:value="${patient.id}"
+                    th:text="${patient.name}">
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <label for="doctor">Doctor:</label>
+
+        <select id="doctor"
+                name="doctor.id"
+                required>
+
+            <option value="">Select Doctor</option>
+
+            <option th:each="doctor : ${doctors}"
+                    th:value="${doctor.id}"
+                    th:text="${doctor.name + ' - ' + doctor.specialization}">
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <label for="appointmentDate">
+            Appointment Date:
+        </label>
+
+        <input type="date"
+               id="appointmentDate"
+               th:field="*{appointmentDate}"
+               required>
+
+        <br><br>
+
+        <label for="appointmentTime">
+            Appointment Time:
+        </label>
+
+        <input type="time"
+               id="appointmentTime"
+               th:field="*{appointmentTime}"
+               required>
+
+        <br><br>
+
+        <label for="reason">Reason:</label>
+
+        <input type="text"
+               id="reason"
+               th:field="*{reason}"
+               required>
+
+        <br><br>
+
+        <button type="submit">
+            Save Appointment
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/appointments">
+        Back to Appointments
+    </a>
+
+</body>
+
+</html>

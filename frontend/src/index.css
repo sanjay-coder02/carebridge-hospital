@@ -1,0 +1,12 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+</head>
+<body>
+
+    <h1>Doctors</h1>
+
+    <a href="/doctors/new">Add Doctor</a>
+
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="doctor : ${doctors}">
+                <td th:text="${doctor.id}"></td>
+                <td th:text="${doctor.name}"></td>
+                <td th:text="${doctor.specialization}"></td>
+                <td th:text="${doctor.phone}"></td>
+                <td th:text="${doctor.email}"></td>
+                <td th:text="${doctor.location}"></td>
+
+                <td>
+                    <a th:href="@{/doctors/edit/{id}(id=${doctor.id})}">
+                        Edit
+                    </a>
+
+                    |
+
+                    <a th:href="@{/doctors/delete/{id}(id=${doctor.id})}"
+                       onclick="return confirm('Are you sure you want to delete this doctor?');">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

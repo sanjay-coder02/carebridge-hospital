@@ -1,0 +1,665 @@
+/* frontend/src/pages/AdminAppointments.css */
+
+.admin-appointments-page {
+    min-height: 100vh;
+    background: #e3eeec;
+}
+
+.admin-appointments-header {
+    padding: 45px 7.5% 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: linear-gradient(
+        135deg,
+        #d5e4e1 0%,
+        #e3eeec 100%
+    );
+    border-bottom: 1px solid #9fc4c0;
+}
+
+.admin-page-label {
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.admin-appointments-header h1 {
+    margin: 8px 0 10px;
+    color: var(--carebridge-navy);
+    font-size: clamp(38px, 5vw, 52px);
+    font-weight: 750;
+    line-height: 1.1;
+}
+
+.admin-appointments-header p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 16px;
+}
+
+.appointment-count {
+    min-width: 70px;
+    padding: 9px 15px;
+    border: 1px solid #8fb9b5;
+    border-radius: 30px;
+    color: var(--carebridge-primary);
+    background: #e7f3f1;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.admin-appointments-content {
+    padding: 35px 7.5% 70px;
+}
+
+.admin-message {
+    margin-bottom: 22px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-error {
+    color: #a52828;
+    background: #fff0f0;
+    border: 1px solid #e7bcbc;
+}
+
+.admin-success {
+    color: #176b54;
+    background: #edf9f4;
+    border: 1px solid #b9ddd0;
+}
+
+/* Diagnosis form */
+
+.diagnosis-form-card {
+    margin-bottom: 30px;
+    padding: 34px;
+    border: 2px solid #86b7b3;
+    border-radius: 20px;
+    background: #c9dfdc;
+    box-shadow: 0 12px 30px rgba(18, 59, 93, 0.10);
+    scroll-margin-top: 105px;
+}
+
+.diagnosis-form-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #9fc4c0;
+}
+
+.diagnosis-form-header span {
+    color: var(--carebridge-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.diagnosis-form-header h2 {
+    margin: 8px 0;
+    color: var(--carebridge-navy);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.diagnosis-form-header p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.diagnosis-close-button {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8fb9b5;
+    border-radius: 50%;
+    color: var(--carebridge-navy);
+    background: #e3f0ee;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.diagnosis-close-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: var(--carebridge-primary);
+    border-color: var(--carebridge-primary);
+    transform: rotate(4deg);
+}
+
+.diagnosis-close-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.diagnosis-patient-grid {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.diagnosis-patient-grid > div {
+    padding: 17px 18px;
+    border: 1px solid #91bbb7;
+    border-radius: 12px;
+    background: #dcebe9;
+}
+
+.diagnosis-patient-grid small {
+    display: block;
+    margin-bottom: 7px;
+    color: #607b84;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.diagnosis-patient-grid strong {
+    display: block;
+    color: var(--carebridge-navy);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.diagnosis-form {
+    margin-top: 5px;
+}
+
+.diagnosis-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.diagnosis-field label {
+    color: var(--carebridge-navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.diagnosis-field textarea {
+    width: 100%;
+    min-height: 135px;
+    padding: 16px 17px;
+    resize: vertical;
+    border: 1px solid #8fb9b5;
+    border-radius: 12px;
+    outline: none;
+    color: var(--carebridge-text);
+    background: #edf5f4;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.diagnosis-field textarea::placeholder {
+    color: #8ba0a8;
+}
+
+.diagnosis-field textarea:hover {
+    border-color: #6fa9a5;
+}
+
+.diagnosis-field textarea:focus {
+    border-color: var(--carebridge-primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.10);
+}
+
+.diagnosis-field > span {
+    color: #667f88;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.diagnosis-form-actions {
+    margin-top: 25px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #9fc4c0;
+}
+
+.diagnosis-form-actions button {
+    min-height: 44px;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.diagnosis-form-actions button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.diagnosis-cancel-button {
+    color: #536a73;
+    background: #e9f2f1;
+    border: 1px solid #a5c3c0;
+}
+
+.diagnosis-cancel-button:hover:not(:disabled) {
+    color: var(--carebridge-navy);
+    background: #f4f9f8;
+    border-color: #7fa9a5;
+}
+
+.diagnosis-save-button {
+    color: #ffffff;
+    background: var(--carebridge-primary);
+    border: 1px solid var(--carebridge-primary);
+    box-shadow: 0 7px 16px rgba(15, 118, 110, 0.18);
+}
+
+.diagnosis-save-button:hover:not(:disabled) {
+    background: var(--carebridge-primary-dark);
+    border-color: var(--carebridge-primary-dark);
+    box-shadow: 0 9px 20px rgba(15, 118, 110, 0.24);
+}
+
+.diagnosis-form-actions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Appointment table */
+
+.appointments-card {
+    overflow: hidden;
+    border: 2px solid #3f8586;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.10);
+}
+
+.appointments-card-header {
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #c9ddda;
+}
+
+.appointments-card-header span {
+    color: var(--carebridge-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.appointments-card-header h2 {
+    margin: 6px 0 0;
+    color: var(--carebridge-navy);
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.appointments-total {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b9d6d2;
+    border-radius: 50%;
+    color: var(--carebridge-primary);
+    background: #e7f3f1;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.appointments-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.appointments-table {
+    width: 100%;
+    min-width: 1100px;
+    margin: 0;
+    border-collapse: collapse;
+    background: #ffffff !important;
+}
+
+.appointments-table thead {
+    background: #f7fbfa !important;
+}
+
+.appointments-table th {
+    padding: 15px 18px;
+    color: #315b6c;
+    background: #f7fbfa !important;
+    border-bottom: 1px solid #c9ddda;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.appointments-table tbody {
+    background: #ffffff !important;
+}
+
+.appointments-table tbody tr {
+    background: #ffffff !important;
+    transition: background-color 0.2s ease;
+}
+
+.appointments-table tbody tr:hover {
+    background: #f8fcfb !important;
+}
+
+.appointments-table td {
+    padding: 17px 18px;
+    color: #32627a;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e1ecea;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.appointments-table tbody tr:hover td {
+    background: #f8fcfb !important;
+}
+
+.appointments-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.appointments-table td:first-child {
+    color: var(--carebridge-primary);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.patient-cell,
+.doctor-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.patient-cell strong,
+.doctor-cell strong {
+    color: var(--carebridge-navy);
+    font-size: 14px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.patient-cell small,
+.doctor-cell small {
+    color: #63808a;
+    font-size: 12px;
+}
+
+.reason-cell {
+    display: block;
+    max-width: 180px;
+    line-height: 1.5;
+}
+
+.appointment-status {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.status-pending {
+    color: #946700;
+    background: #fff2c9;
+}
+
+.status-confirmed {
+    color: #176b4d;
+    background: #d9f1e5;
+}
+
+.status-cancelled {
+    color: #a52e2e;
+    background: #f9dede;
+}
+
+.status-completed {
+    color: #245b8a;
+    background: #dceaf5;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-width: 180px;
+}
+
+.appointment-actions button {
+    min-height: 34px;
+    padding: 6px 11px;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.appointment-actions button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.confirm-button {
+    color: #16704e;
+    border: 1px solid #9fcdbd;
+}
+
+.confirm-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #16704e;
+    border-color: #16704e;
+}
+
+.cancel-button {
+    color: #a12d2d;
+    border: 1px solid #e2b6b6;
+}
+
+.cancel-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #a12d2d;
+    border-color: #a12d2d;
+}
+
+.complete-button {
+    color: var(--carebridge-primary);
+    border: 1px solid #8fbdb8;
+}
+
+.complete-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: var(--carebridge-primary);
+    border-color: var(--carebridge-primary);
+}
+
+.edit-diagnosis-button {
+    color: #245b8a;
+    border: 1px solid #b4cfe1;
+}
+
+.edit-diagnosis-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #245b8a;
+    border-color: #245b8a;
+}
+
+.delete-button {
+    color: #68757d;
+    border: 1px solid #c5d0d4;
+}
+
+.delete-button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #53616b;
+    border-color: #53616b;
+}
+
+.appointment-actions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.appointments-state {
+    padding: 65px 30px;
+    color: var(--carebridge-muted);
+    background: #ffffff;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .admin-appointments-header {
+        padding: 45px 5% 40px;
+    }
+
+    .admin-appointments-content {
+        padding: 35px 5% 60px;
+    }
+
+    .diagnosis-form-card {
+        padding: 28px;
+    }
+
+    .diagnosis-patient-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .admin-appointments-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-appointments-header h1 {
+        font-size: 40px;
+    }
+
+    .appointments-card-header {
+        padding: 22px;
+    }
+
+    .appointments-card-header h2 {
+        font-size: 22px;
+    }
+
+    .complete-button,
+    .edit-diagnosis-button {
+        width: 100%;
+    }
+
+    .diagnosis-form-card {
+        padding: 23px;
+    }
+
+    .diagnosis-form-header {
+        gap: 15px;
+    }
+
+    .diagnosis-form-header h2 {
+        font-size: 24px;
+    }
+
+    .diagnosis-patient-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnosis-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .diagnosis-form-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .admin-appointments-header {
+        padding: 40px 20px;
+    }
+
+    .admin-appointments-content {
+        padding: 30px 15px 50px;
+    }
+
+    .appointments-card-header {
+        padding: 20px;
+    }
+
+    .appointment-count {
+        padding: 9px 15px;
+    }
+
+    .diagnosis-form-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .diagnosis-form-header h2 {
+        font-size: 21px;
+    }
+
+    .diagnosis-close-button {
+        width: 38px;
+        height: 38px;
+    }
+}

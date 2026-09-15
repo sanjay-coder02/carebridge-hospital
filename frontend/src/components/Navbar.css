@@ -1,0 +1,148 @@
+/* Navbar */
+
+.carebridge-navbar {
+    min-height: 80px;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--carebridge-border);
+    box-shadow: 0 4px 18px rgba(18, 59, 93, 0.04);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.carebridge-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--carebridge-primary);
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-text strong {
+    color: var(--carebridge-navy);
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.brand-text small {
+    margin-top: 5px;
+    color: var(--carebridge-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.carebridge-navbar .navbar-nav {
+    gap: 6px;
+}
+
+.carebridge-nav-link {
+    padding: 10px 14px !important;
+    border-radius: 8px;
+    color: var(--carebridge-text) !important;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.carebridge-nav-link:hover {
+    background: #edf8f6;
+    color: var(--carebridge-primary) !important;
+}
+
+.carebridge-nav-link.active {
+    color: var(--carebridge-primary) !important;
+    background: #edf8f6;
+}
+
+.carebridge-admin-link {
+    margin-left: 7px;
+    padding: 11px 19px !important;
+    border-radius: 9px;
+    background: var(--carebridge-primary);
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.carebridge-admin-link:hover {
+    background: var(--carebridge-primary-dark);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.carebridge-navbar .navbar-toggler {
+    padding: 7px 9px;
+    border: 1px solid #c9deda;
+    border-radius: 8px;
+}
+
+.carebridge-navbar .navbar-toggler:focus {
+    box-shadow:
+        0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+@media (max-width: 991px) {
+    .carebridge-navbar {
+        min-height: 72px;
+    }
+
+    .carebridge-navbar .navbar-collapse {
+        padding: 15px 0 18px;
+    }
+
+    .carebridge-navbar .navbar-nav {
+        gap: 3px;
+    }
+
+    .carebridge-nav-link {
+        padding: 11px 12px !important;
+    }
+
+    .carebridge-admin-link {
+        margin: 7px 0 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+    }
+
+    .brand-text strong {
+        font-size: 20px;
+    }
+
+    .brand-text small {
+        font-size: 9px;
+    }
+}

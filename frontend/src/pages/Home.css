@@ -1,0 +1,586 @@
+/* frontend/src/pages/Home.css */
+
+/* ================================
+   HOME HERO
+================================ */
+
+.carebridge-home-intro {
+    padding: 72px 0 64px;
+    background: var(--carebridge-background);
+}
+
+.home-intro-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.carebridge-home-intro h1 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.carebridge-home-intro h1 span {
+    display: block;
+    color: var(--carebridge-primary);
+}
+
+.carebridge-home-intro p {
+    max-width: 590px;
+    margin: 22px 0 0;
+    color: #58717d;
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.home-intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.carebridge-primary-button {
+    min-width: 245px;
+    padding: 15px 28px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 14px !important;
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 8px 18px rgba(15, 118, 110, 0.18);
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.carebridge-primary-button:hover {
+    background: var(--carebridge-primary-dark) !important;
+    border-color: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(15, 118, 110, 0.24);
+}
+
+.carebridge-secondary-button {
+    min-width: 210px;
+    padding: 15px 28px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 14px !important;
+    background: #ffffff !important;
+    color: var(--carebridge-primary) !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.carebridge-secondary-button:hover {
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
+}
+
+.home-trust-details {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 38px;
+}
+
+.home-trust-details > div {
+    min-width: 150px;
+    padding: 0 25px;
+    border-left: 1px solid #aec8c5;
+}
+
+.home-trust-details > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.home-trust-details strong {
+    display: block;
+    color: var(--carebridge-navy);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.home-trust-details span {
+    display: block;
+    margin-top: 7px;
+    color: #58717d;
+    font-size: 14px;
+}
+
+.home-image-container {
+    width: 100%;
+}
+
+.home-banner-wrapper {
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    border: 2px solid #9fbab7;
+    border-radius: 28px;
+    background: var(--carebridge-surface);
+    box-shadow:
+        0 14px 34px rgba(18, 59, 93, 0.13);
+}
+
+.home-banner-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 26px;
+    filter: none;
+    transform: scale(1);
+}
+
+
+/* ================================
+   HOME SECTIONS
+================================ */
+.carebridge-section {
+    padding: 72px 0 76px;
+    background: #c5dcda;
+    border-top: 1px solid #b0cfcc;
+    border-bottom: 1px solid #b0cfcc;
+}
+.carebridge-services-section {
+    padding: 72px 0 78px;
+    background: var(--carebridge-surface-soft);
+}
+
+.carebridge-doctors-preview {
+    padding: 72px 0 78px;
+    background: var(--carebridge-background);
+}
+
+
+/* ================================
+   SECTION HEADINGS
+================================ */
+
+.carebridge-section-heading {
+    max-width: 850px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.carebridge-section-heading > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.carebridge-section-heading h2 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.carebridge-section-heading p {
+    max-width: 760px;
+    margin: 16px auto 0;
+    color: #58717d;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   LIGHT THEMED CARDS
+================================ */
+
+.carebridge-feature-card,
+.carebridge-service-card,
+.doctor-info-card {
+    overflow: hidden;
+    border: 2px solid #7daaa6 !important;
+    border-radius: 18px !important;
+    background: #c4dcda !important;
+    box-shadow:
+        0 8px 22px rgba(18, 59, 93, 0.10);
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.carebridge-feature-card:hover,
+.carebridge-service-card:hover,
+.doctor-info-card:hover {
+    transform: translateY(-6px);
+    border-color: #5f9290 !important;
+    background: #b8d3d0 !important;
+    box-shadow:
+        0 16px 30px rgba(18, 59, 93, 0.17);
+}
+
+.carebridge-feature-card .card-body,
+.carebridge-service-card .card-body,
+.doctor-info-card .card-body {
+    padding: 30px;
+}
+
+
+/* ================================
+   CARD ICONS
+================================ */
+
+.carebridge-card-icon,
+.doctor-info-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border: 1px solid #86aaa7;
+    border-radius: 15px;
+    background: #eaf4f2;
+    color: var(--carebridge-navy);
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* ================================
+   CARD TEXT
+================================ */
+
+.carebridge-feature-card .card-title,
+.carebridge-service-card .card-title,
+.doctor-info-card .card-title {
+    margin-bottom: 12px;
+    color: var(--carebridge-navy) !important;
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.carebridge-feature-card .card-text,
+.carebridge-service-card .card-text,
+.doctor-info-card .card-text {
+    margin-bottom: 0;
+    color: #426875 !important;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   DOCTORS PREVIEW
+================================ */
+
+.carebridge-doctors-preview > .container > .row:first-child {
+    margin-bottom: 4px;
+}
+
+.carebridge-doctors-preview
+    > .container
+    > .row:first-child
+    > div:first-child
+    > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.carebridge-doctors-preview h2 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.carebridge-doctors-preview p {
+    max-width: 760px;
+    margin: 16px 0 0;
+    color: #58717d;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.view-doctors-button {
+    padding: 14px 25px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 13px !important;
+    background: transparent !important;
+    color: var(--carebridge-primary) !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.view-doctors-button:hover {
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 22px rgba(15, 118, 110, 0.18);
+}
+
+
+/* ================================
+   APPOINTMENT CTA
+================================ */
+
+.carebridge-appointment-section {
+    padding: 72px 0;
+    background:
+        linear-gradient(
+            135deg,
+            #0f766e 0%,
+            #176b78 48%,
+            #1b4f70 100%
+        );
+}
+
+.carebridge-appointment-section > .container {
+    position: relative;
+}
+
+.carebridge-appointment-section span {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: #c9dfdb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.carebridge-appointment-section h2 {
+    max-width: 780px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.carebridge-appointment-section p {
+    max-width: 700px;
+    margin: 17px 0 0;
+    color: #d7ebee;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.carebridge-cta-button {
+    padding: 15px 28px !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 13px !important;
+    background: #ffffff !important;
+    color: #0f766e !important;
+    font-size: 15px !important;
+    font-weight: 750 !important;
+    box-shadow:
+        0 10px 25px rgba(7, 43, 65, 0.18);
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.carebridge-cta-button:hover {
+    background: #c9dfdb !important;
+    border-color: #c9dfdb !important;
+    color: #123b5d !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 28px rgba(7, 43, 65, 0.24);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 991px) {
+    .carebridge-home-intro {
+        padding: 58px 0 60px;
+    }
+
+    .home-banner-wrapper {
+        height: 400px;
+    }
+
+    .carebridge-section,
+    .carebridge-services-section,
+    .carebridge-doctors-preview {
+        padding: 62px 0 66px;
+    }
+
+    .carebridge-appointment-section {
+        padding: 62px 0;
+    }
+
+    .home-trust-details {
+        margin-top: 32px;
+    }
+
+    .carebridge-appointment-section .text-lg-end {
+        margin-top: 28px;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .carebridge-home-intro {
+        padding: 48px 0 52px;
+    }
+
+    .carebridge-home-intro h1 {
+        font-size: 44px;
+        letter-spacing: -1.2px;
+    }
+
+    .carebridge-home-intro p {
+        font-size: 16px;
+    }
+
+    .home-intro-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .carebridge-primary-button,
+    .carebridge-secondary-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .home-trust-details {
+        flex-wrap: wrap;
+        row-gap: 22px;
+    }
+
+    .home-trust-details > div {
+        min-width: 33.333%;
+        padding: 0 15px;
+    }
+
+    .home-trust-details > div:first-child {
+        padding-left: 0;
+    }
+
+    .home-banner-wrapper {
+        height: 340px;
+        border-radius: 22px;
+    }
+
+    .home-banner-image {
+        border-radius: 20px;
+    }
+
+    .carebridge-section,
+    .carebridge-services-section,
+    .carebridge-doctors-preview {
+        padding: 54px 0 58px;
+    }
+
+    .carebridge-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .carebridge-section-heading h2,
+    .carebridge-doctors-preview h2,
+    .carebridge-appointment-section h2 {
+        font-size: 36px;
+    }
+
+    .carebridge-feature-card .card-body,
+    .carebridge-service-card .card-body,
+    .doctor-info-card .card-body {
+        padding: 26px;
+    }
+
+    .carebridge-doctors-preview
+        > .container
+        > .row:first-child
+        > div:last-child {
+        margin-top: 24px;
+        text-align: left !important;
+    }
+
+    .carebridge-appointment-section {
+        padding: 54px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .carebridge-home-intro h1 {
+        font-size: 38px;
+    }
+
+    .home-trust-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .home-trust-details > div,
+    .home-trust-details > div:first-child {
+        min-width: 0;
+        padding: 0 0 0 16px;
+        border-left: 2px solid #aec8c5;
+    }
+
+    .home-banner-wrapper {
+        height: 290px;
+    }
+
+    .carebridge-section-heading h2,
+    .carebridge-doctors-preview h2,
+    .carebridge-appointment-section h2 {
+        font-size: 32px;
+    }
+
+    .carebridge-card-icon,
+    .doctor-info-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 25px;
+    }
+
+    .carebridge-feature-card .card-title,
+    .carebridge-service-card .card-title,
+    .doctor-info-card .card-title {
+        font-size: 19px;
+    }
+}

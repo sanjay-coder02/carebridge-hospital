@@ -1,0 +1,82 @@
+<!-- backend/src/main/resources/templates/appointments.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appointments</title>
+</head>
+
+<body>
+
+    <h1>Appointments</h1>
+
+    <a href="/appointments/new">
+        Add Appointment
+    </a>
+
+    <br><br>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr th:each="appointment : ${appointments}">
+
+                <td th:text="${appointment.id}">
+                </td>
+
+                <td th:text="${appointment.patient != null
+                    ? appointment.patient.name
+                    : 'Patient not linked'}">
+                </td>
+
+                <td th:text="${appointment.doctor != null
+                    ? appointment.doctor.name
+                    : 'Doctor not linked'}">
+                </td>
+
+                <td th:text="${appointment.appointmentDate}">
+                </td>
+
+                <td th:text="${appointment.appointmentTime}">
+                </td>
+
+                <td th:text="${appointment.reason}">
+                </td>
+
+                <td th:text="${appointment.status}">
+                </td>
+
+                <td>
+                    <a th:href="@{/appointments/delete/{id}(id=${appointment.id})}"
+                       onclick="return confirm('Are you sure you want to delete this appointment?');">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

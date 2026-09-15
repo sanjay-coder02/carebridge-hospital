@@ -1,0 +1,304 @@
+/* frontend/src/pages/Doctors.css */
+
+/* ================================
+   DOCTORS PAGE
+================================ */
+
+.doctors-page {
+    background: var(--carebridge-background);
+}
+
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.doctors-header {
+    padding: 72px 0 68px;
+    background: #d5e4e1;
+    border-bottom: 1px solid #b0cfcc;
+    text-align: center;
+}
+
+.doctors-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.doctors-header-content > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.doctors-header-content h1 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.doctors-header-content p {
+    max-width: 700px;
+    margin: 17px auto 0;
+    color: #58717d;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   DOCTORS LIST SECTION
+================================ */
+
+.doctors-list-section {
+    padding: 70px 0 80px;
+    background: #e3eeec;
+}
+
+
+/* ================================
+   DOCTOR CARDS
+================================ */
+
+.doctor-card {
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid #7daaa6 !important;
+    border-radius: 18px !important;
+    background: #c4dcda !important;
+    box-shadow:
+        0 8px 22px rgba(18, 59, 93, 0.10);
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    border-color: #5f9290 !important;
+    background: #b8d3d0 !important;
+    box-shadow:
+        0 16px 30px rgba(18, 59, 93, 0.17);
+}
+
+.doctor-card .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+
+/* ================================
+   DOCTOR ICON
+================================ */
+
+.doctor-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #86aaa7;
+    border-radius: 15px;
+    background: #eaf4f2;
+    color: var(--carebridge-navy);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+/* ================================
+   SPECIALIZATION
+================================ */
+
+.doctor-specialization {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--carebridge-primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+
+/* ================================
+   DOCTOR NAME
+================================ */
+
+.doctor-card .card-title {
+    margin-bottom: 14px;
+    color: var(--carebridge-navy) !important;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+
+/* ================================
+   DOCTOR DESCRIPTION
+================================ */
+
+.doctor-description {
+    min-height: 72px;
+    margin-bottom: 22px;
+    color: #426875 !important;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   DOCTOR DETAILS
+================================ */
+
+.doctor-details {
+    margin-top: auto;
+    padding: 17px 0;
+    border-top: 1px solid #7daaa6;
+    border-bottom: 1px solid #7daaa6;
+}
+
+.doctor-details p {
+    margin: 0 0 8px;
+    color: #426875;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.doctor-details p:last-child {
+    margin-bottom: 0;
+}
+
+.doctor-details strong {
+    color: var(--carebridge-navy);
+    font-weight: 750;
+}
+
+
+/* ================================
+   BOOK APPOINTMENT BUTTON
+================================ */
+
+.doctor-book-button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px 18px !important;
+    border: 2px solid var(--carebridge-primary) !important;
+    border-radius: 11px !important;
+    background: var(--carebridge-primary) !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    box-shadow:
+        0 6px 14px rgba(15, 118, 110, 0.12);
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.doctor-book-button:hover {
+    background: var(--carebridge-primary-dark) !important;
+    border-color: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 20px rgba(15, 118, 110, 0.20);
+}
+
+
+/* ================================
+   LOADING / EMPTY / ERROR
+================================ */
+
+.doctors-message {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--carebridge-muted);
+}
+
+.doctors-message p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.doctors-error {
+    color: #b42318;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 991px) {
+    .doctors-header {
+        padding: 62px 0 58px;
+    }
+
+    .doctors-list-section {
+        padding: 62px 0 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .doctors-header {
+        padding: 54px 0 50px;
+    }
+
+    .doctors-header-content h1 {
+        font-size: 42px;
+    }
+
+    .doctors-header-content p {
+        font-size: 16px;
+    }
+
+    .doctors-list-section {
+        padding: 52px 0 65px;
+    }
+
+    .doctor-card .card-body {
+        padding: 26px;
+    }
+
+    .doctor-description {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .doctors-header-content h1 {
+        font-size: 36px;
+    }
+
+    .doctors-header-content > span {
+        font-size: 12px;
+    }
+
+    .doctor-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 27px;
+    }
+
+    .doctor-card .card-title {
+        font-size: 21px;
+    }
+
+    .doctor-card .card-body {
+        padding: 24px;
+    }
+}

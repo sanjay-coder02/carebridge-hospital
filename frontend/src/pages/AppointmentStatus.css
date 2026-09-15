@@ -1,0 +1,392 @@
+/* frontend/src/pages/AppointmentStatus.css */
+
+.appointment-status-page {
+    min-height: calc(100vh - 80px);
+    background: #d5e4e1;
+}
+
+/* HEADER */
+
+.appointment-status-header {
+    padding: 45px 0 38px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--carebridge-border);
+}
+
+.appointment-status-header-content {
+    max-width: 760px;
+}
+
+.appointment-status-header-content span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--carebridge-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.appointment-status-header-content h1 {
+    margin: 0 0 10px;
+    color: var(--carebridge-navy);
+    font-size: 42px;
+    font-weight: 750;
+    line-height: 1.15;
+}
+
+.appointment-status-header-content p {
+    margin: 0;
+    color: var(--carebridge-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* CONTENT */
+
+.appointment-status-section {
+    padding: 42px 0 70px;
+}
+
+.appointment-status-card,
+.appointment-status-result {
+    border: 2px solid #3f8586;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow:
+        0 12px 30px rgba(18, 59, 93, 0.09);
+}
+
+.appointment-status-card {
+    padding: 32px 34px;
+}
+
+/* FORM HEADING */
+
+.status-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 14px;
+}
+
+.status-card-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b9d6d2;
+    border-radius: 13px;
+    background: #e7f3f1;
+    color: var(--carebridge-primary);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.status-card-heading span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--carebridge-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.status-card-heading h2 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: 25px;
+    font-weight: 750;
+    line-height: 1.25;
+}
+
+.status-card-description {
+    margin: 0 0 23px;
+    color: var(--carebridge-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FORM */
+
+.appointment-status-card .form-label {
+    margin-bottom: 7px;
+    color: var(--carebridge-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.appointment-status-card .form-control {
+    min-height: 49px;
+    padding: 10px 14px;
+    border: 1px solid #c5dcd8;
+    border-radius: 9px;
+    background: #f8fcfb;
+    color: var(--carebridge-text);
+    font-size: 14px;
+}
+
+.appointment-status-card .form-control:hover {
+    border-color: #9fc7c1;
+}
+
+.appointment-status-card .form-control:focus {
+    border-color: var(--carebridge-primary);
+    background: #ffffff;
+    box-shadow:
+        0 0 0 3px rgba(15, 118, 110, 0.10);
+}
+
+.status-form-actions {
+    margin-top: 21px;
+    display: flex;
+    gap: 10px;
+}
+
+.status-check-button,
+.status-clear-button {
+    min-height: 46px;
+    padding: 10px 21px;
+    border-radius: 9px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-check-button {
+    flex: 1;
+    border: 0;
+    background: var(--carebridge-primary);
+}
+
+.status-check-button:hover {
+    background: var(--carebridge-primary-dark);
+}
+
+.status-check-button:focus,
+.status-check-button:active {
+    background: var(--carebridge-primary-dark) !important;
+    color: #ffffff !important;
+}
+
+.status-clear-button {
+    min-width: 100px;
+    border: 1px solid #c5dcd8;
+    background: #ffffff;
+    color: var(--carebridge-navy);
+}
+
+.status-clear-button:hover {
+    border-color: #9fc7c1;
+    background: #f4fbfa;
+    color: var(--carebridge-navy);
+}
+
+.status-alert {
+    margin-bottom: 22px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+/* RESULT */
+
+.appointment-status-result {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+/* RESULT HEADER */
+
+.status-result-heading {
+    padding: 22px 27px;
+    background: #f7fbfa;
+    border-bottom: 1px solid #dbe8e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.status-result-heading span:first-child {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--carebridge-primary);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.status-result-heading h2 {
+    margin: 0;
+    color: var(--carebridge-navy);
+    font-size: 24px;
+    font-weight: 750;
+}
+
+.appointment-status-badge {
+    min-width: 105px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.4px !important;
+}
+
+.appointment-status-badge.pending {
+    background: #fff3d6;
+    color: #a76500 !important;
+}
+
+.appointment-status-badge.confirmed {
+    background: #e2f6ed;
+    color: #087443 !important;
+}
+
+.appointment-status-badge.completed {
+    background: #e3f0fb;
+    color: #245d8f !important;
+}
+
+.appointment-status-badge.cancelled {
+    background: #fde8e8;
+    color: #b42318 !important;
+}
+
+/* DETAILS */
+
+.status-details {
+    padding: 23px 27px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 38px;
+}
+
+.status-detail {
+    min-width: 0;
+}
+
+.status-detail span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--carebridge-primary);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.status-detail strong {
+    display: block;
+    color: var(--carebridge-navy);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* STATUS MESSAGE */
+
+.status-message {
+    margin: 0 27px 25px;
+    padding: 14px 17px;
+    border-radius: 8px;
+}
+
+.status-message p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.status-message.pending {
+    background: #fff8e8;
+    color: #8a5a00;
+}
+
+.status-message.confirmed {
+    background: #edf9f4;
+    color: #087443;
+}
+
+.status-message.completed {
+    background: #eef6fb;
+    color: #245d8f;
+}
+
+.status-message.cancelled {
+    background: #fff0f0;
+    color: #a61b1b;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 767px) {
+    .appointment-status-header {
+        padding: 38px 0 32px;
+    }
+
+    .appointment-status-header-content h1 {
+        font-size: 34px;
+    }
+
+    .appointment-status-section {
+        padding: 32px 0 55px;
+    }
+
+    .appointment-status-card {
+        padding: 27px 21px;
+        border-radius: 17px;
+    }
+
+    .status-form-actions {
+        flex-direction: column;
+    }
+
+    .status-check-button,
+    .status-clear-button {
+        width: 100%;
+    }
+
+    .status-result-heading {
+        padding: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .status-details {
+        padding: 20px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .status-message {
+        margin: 0 20px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .appointment-status-header-content h1 {
+        font-size: 31px;
+    }
+
+    .status-card-heading {
+        align-items: flex-start;
+    }
+
+    .status-card-icon {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+    }
+
+    .status-card-heading h2 {
+        font-size: 23px;
+    }
+
+    .status-result-heading h2 {
+        font-size: 22px;
+    }
+}
