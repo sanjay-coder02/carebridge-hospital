@@ -37,10 +37,12 @@ function AdminReports() {
   });
 
   const [processing, setProcessing] = useState(false);
-
-  useEffect(() => {
+  
+useEffect(() => {
     loadReports();
-  }, []);
+    // loadReports is intentionally called once when the page loads.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   async function fetchData(endpoint) {
     const response = await fetch(
