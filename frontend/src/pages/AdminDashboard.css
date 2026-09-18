@@ -3,10 +3,18 @@
 .admin-dashboard-page {
     min-height: calc(100vh - 80px);
     padding: 42px 0 65px;
-    background: #d5e4e1;
+    background:
+        linear-gradient(
+            180deg,
+            #031522 0%,
+            #061d2d 52%,
+            #031522 100%
+        );
+    color: #ffffff;
 }
 
-/* HEADER */
+
+/* Header */
 
 .admin-dashboard-header {
     margin-bottom: 30px;
@@ -21,57 +29,73 @@
 
 .admin-dashboard-header span {
     display: inline-block;
-    margin-bottom: 9px;
-    color: var(--carebridge-primary);
-    font-size: 12px;
+    margin-bottom: 8px;
+    color: #5ce0d5;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
 }
 
 .admin-dashboard-header h1 {
-    margin: 0 0 9px;
-    color: var(--carebridge-navy);
+    margin: 0 0 8px;
+    color: #ffffff;
     font-size: 42px;
-    font-weight: 750;
-    letter-spacing: -0.8px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .admin-dashboard-header p {
     margin: 0;
-    color: var(--carebridge-muted);
-    font-size: 16px;
+    color: #91afbd;
+    font-size: 15px;
     line-height: 1.6;
 }
 
-/* LOGOUT */
+
+/* Logout */
 
 .admin-logout-button {
     min-width: 105px;
-    min-height: 45px;
-    padding: 10px 20px;
-    border: 0;
-    border-radius: 9px;
-    background: var(--carebridge-primary);
-    color: #ffffff;
-    font-weight: 700;
+    min-height: 44px;
+    padding: 9px 20px !important;
+    border: 1px solid rgba(92, 224, 213, 0.25) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    color: #c4dbe2 !important;
+    font-size: 13px;
+    font-weight: 800;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .admin-logout-button:hover,
 .admin-logout-button:focus,
 .admin-logout-button:active {
-    border: 0 !important;
-    background: var(--carebridge-primary-dark) !important;
+    border-color: rgba(92, 224, 213, 0.45) !important;
+    background: rgba(92, 224, 213, 0.08) !important;
     color: #ffffff !important;
+    transform: translateY(-2px);
 }
 
-/* ALERT */
+
+/* Alert */
 
 .admin-dashboard-alert {
     margin-bottom: 24px;
-    border-radius: 10px;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 104, 104, 0.25) !important;
+    border-radius: 10px !important;
+    background: rgba(180, 45, 45, 0.12) !important;
+    color: #ffb4b4 !important;
+    font-size: 13px;
 }
 
-/* STATISTICS */
+
+/* Statistics */
 
 .admin-stats-row {
     margin-bottom: 0;
@@ -79,42 +103,55 @@
 
 .admin-stat-card {
     height: 100%;
-    min-height: 118px;
-    border: 2px solid #3f8586;
-    border-radius: 16px;
-    background: #ffffff;
+    min-height: 112px;
+    border: 1px solid rgba(92, 224, 213, 0.2) !important;
+    border-radius: 16px !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 52, 69, 0.96),
+            rgba(5, 35, 49, 0.98)
+        ) !important;
     box-shadow:
-        0 10px 26px rgba(18, 59, 93, 0.08);
+        0 14px 34px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
     transition:
         transform 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 .admin-stat-card:hover {
+    border-color: rgba(92, 224, 213, 0.38) !important;
     transform: translateY(-3px);
     box-shadow:
-        0 15px 30px rgba(18, 59, 93, 0.13);
+        0 18px 38px rgba(0, 0, 0, 0.25);
 }
 
 .admin-stat-card .card-body {
     display: flex;
     align-items: center;
-    gap: 17px;
-    padding: 22px;
+    gap: 16px;
+    padding: 21px;
 }
 
 .admin-stat-icon {
-    width: 52px;
-    height: 52px;
-    flex: 0 0 52px;
+    width: 51px;
+    height: 51px;
+    flex: 0 0 51px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #9fc7c1;
+    border: 1px solid rgba(92, 224, 213, 0.3);
     border-radius: 13px;
-    background: #c9dfdb;
-    color: var(--carebridge-navy);
-    font-size: 17px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 181, 170, 0.16),
+            rgba(8, 181, 170, 0.06)
+        );
+    color: #5ce0d5;
+    font-size: 16px;
     font-weight: 800;
 }
 
@@ -125,110 +162,146 @@
 .admin-stat-card span {
     display: block;
     margin-bottom: 6px;
-    color: var(--carebridge-muted);
-    font-size: 13px;
-    font-weight: 600;
+    color: #78a2b1;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .admin-stat-card strong {
     display: block;
-    color: var(--carebridge-navy);
-    font-size: 29px;
-    font-weight: 750;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
     line-height: 1;
 }
 
-/* MANAGEMENT */
+
+/* Management */
 
 .admin-management-card {
-    margin-top: 34px;
-    padding: 34px;
-    border: 2px solid #3f8586;
+    position: relative;
+    margin-top: 32px;
+    padding: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(92, 224, 213, 0.22);
     border-radius: 20px;
-    background: #ffffff;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 48, 66, 0.88),
+            rgba(5, 35, 49, 0.94)
+        );
     box-shadow:
-        0 12px 32px rgba(18, 59, 93, 0.08);
+        0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+.admin-management-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background:
+        linear-gradient(
+            90deg,
+            #08b5aa,
+            #5ce0d5,
+            transparent
+        );
 }
 
 .admin-management-heading {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .admin-management-heading > span {
     display: inline-block;
-    margin-bottom: 8px;
-    color: var(--carebridge-primary);
-    font-size: 11px;
+    margin-bottom: 7px;
+    color: #5ce0d5;
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
 }
 
 .admin-management-heading h2 {
-    margin: 0 0 7px;
-    color: var(--carebridge-navy);
-    font-size: 30px;
-    font-weight: 750;
-    letter-spacing: -0.5px;
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: 29px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.6px;
 }
 
 .admin-management-heading p {
     margin: 0;
-    color: var(--carebridge-muted);
-    font-size: 14px;
+    color: #8eabb8;
+    font-size: 13px;
     line-height: 1.6;
 }
 
-/* MODULE CARDS */
+
+/* Module Cards */
 
 .admin-module-card {
     width: 100%;
-    min-height: 155px;
-    padding: 25px;
-    border: 2px solid #3f8586;
-    border-radius: 16px;
-    background: #ffffff;
-    color: var(--carebridge-text);
+    min-height: 145px;
+    padding: 23px;
+    border: 1px solid rgba(92, 224, 213, 0.19);
+    border-radius: 15px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 40, 59, 0.96),
+            rgba(5, 31, 45, 0.98)
+        );
+    color: #ffffff;
     text-align: left;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow:
-        0 8px 22px rgba(18, 59, 93, 0.07);
+        0 9px 25px rgba(0, 0, 0, 0.15);
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
         border-color 0.2s ease,
-        background-color 0.2s ease;
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .admin-module-card:hover {
-    border-color: var(--carebridge-primary);
-    background: #f8fcfb;
+    border-color: rgba(92, 224, 213, 0.4);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 49, 68, 0.98),
+            rgba(6, 37, 52, 0.98)
+        );
     transform: translateY(-4px);
     box-shadow:
-        0 14px 30px rgba(18, 59, 93, 0.12);
+        0 15px 32px rgba(0, 0, 0, 0.22);
 }
 
 .admin-module-card:focus-visible {
-    outline: 3px solid rgba(15, 118, 110, 0.18);
+    outline: 3px solid rgba(8, 181, 170, 0.18);
     outline-offset: 3px;
 }
 
 .admin-module-content strong {
     display: block;
-    margin-bottom: 8px;
-    color: var(--carebridge-navy);
-    font-size: 20px;
-    font-weight: 750;
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
 }
 
 .admin-module-content small {
     display: block;
-    max-width: 300px;
-    color: var(--carebridge-muted);
-    font-size: 13px;
-    line-height: 1.6;
+    max-width: 280px;
+    color: #82a5b3;
+    font-size: 12px;
+    line-height: 1.55;
 }
 
 .admin-module-link {
@@ -236,10 +309,10 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    margin-top: 20px;
-    color: var(--carebridge-primary);
-    font-size: 13px;
-    font-weight: 750;
+    margin-top: 18px;
+    color: #5ce0d5;
+    font-size: 12px;
+    font-weight: 800;
     transition: transform 0.2s ease;
 }
 
@@ -247,11 +320,12 @@
     transform: translateX(4px);
 }
 
-/* RESPONSIVE */
+
+/* Responsive */
 
 @media (max-width: 991.98px) {
     .admin-dashboard-page {
-        padding: 38px 0 55px;
+        padding: 36px 0 55px;
     }
 
     .admin-dashboard-header h1 {
@@ -259,7 +333,7 @@
     }
 
     .admin-management-card {
-        padding: 30px;
+        padding: 29px;
     }
 }
 
@@ -277,23 +351,27 @@
         font-size: 34px;
     }
 
+    .admin-dashboard-header p {
+        font-size: 14px;
+    }
+
     .admin-logout-button {
         width: 100%;
     }
 
     .admin-management-card {
-        margin-top: 28px;
-        padding: 25px 20px;
+        margin-top: 27px;
+        padding: 24px 20px;
         border-radius: 18px;
     }
 
     .admin-management-heading h2 {
-        font-size: 27px;
+        font-size: 26px;
     }
 
     .admin-module-card {
-        min-height: 145px;
-        padding: 23px;
+        min-height: 140px;
+        padding: 22px;
     }
 }
 
@@ -303,10 +381,14 @@
     }
 
     .admin-stat-card .card-body {
-        padding: 19px;
+        padding: 18px;
     }
 
     .admin-management-card {
         padding: 22px 16px;
+    }
+
+    .admin-module-card {
+        min-height: 135px;
     }
 }

@@ -1,344 +1,589 @@
-/* frontend/src/pages/AppointmentStatus.css */
-
 .appointment-status-page {
     min-height: calc(100vh - 80px);
-    background: #d5e4e1;
+    background:
+        linear-gradient(
+            180deg,
+            #031522 0%,
+            #061d2d 52%,
+            #031522 100%
+        );
+    color: #ffffff;
 }
 
-/* HEADER */
+
+/* Page Header */
 
 .appointment-status-header {
-    padding: 45px 0 38px;
-    background: #ffffff;
-    border-bottom: 1px solid var(--carebridge-border);
+    position: relative;
+    padding: 82px 0 74px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #031522 0%,
+            #08283b 58%,
+            #063341 100%
+        );
+    border-bottom: 1px solid rgba(92, 224, 213, 0.16);
+}
+
+.appointment-status-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 180px;
+    height: 3px;
+    background: #08b5aa;
 }
 
 .appointment-status-header-content {
-    max-width: 760px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .appointment-status-header-content span {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--carebridge-primary);
-    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 18px;
+    color: #5ce0d5;
+    font-size: 12px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+}
+
+.appointment-status-header-content span::before {
+    content: "";
+    width: 38px;
+    height: 2px;
+    background: #08b5aa;
 }
 
 .appointment-status-header-content h1 {
-    margin: 0 0 10px;
-    color: var(--carebridge-navy);
-    font-size: 42px;
-    font-weight: 750;
-    line-height: 1.15;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(42px, 5.5vw, 68px);
+    font-weight: 850;
+    line-height: 1.04;
+    letter-spacing: -2.5px;
 }
 
 .appointment-status-header-content p {
-    margin: 0;
-    color: var(--carebridge-muted);
-    font-size: 15px;
-    line-height: 1.6;
+    max-width: 680px;
+    margin: 20px auto 0;
+    color: #9bb9c7;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
-/* CONTENT */
+
+/* Content */
 
 .appointment-status-section {
-    padding: 42px 0 70px;
+    padding: 72px 0 95px;
+    background:
+        linear-gradient(
+            180deg,
+            #061d2d 0%,
+            #031522 100%
+        );
 }
 
-.appointment-status-card,
-.appointment-status-result {
-    border: 2px solid #3f8586;
-    border-radius: 18px;
-    background: #ffffff;
-    box-shadow:
-        0 12px 30px rgba(18, 59, 93, 0.09);
-}
+
+/* Search Card */
 
 .appointment-status-card {
-    padding: 32px 34px;
+    position: relative;
+    padding: 42px;
+    overflow: hidden;
+    border: 1px solid rgba(92, 224, 213, 0.22);
+    border-radius: 22px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 52, 69, 0.96),
+            rgba(5, 35, 49, 0.98)
+        );
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
-/* FORM HEADING */
+.appointment-status-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #08b5aa,
+        #5ce0d5,
+        transparent
+    );
+}
+
+
+/* Card Heading */
 
 .status-card-heading {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 14px;
+    gap: 18px;
+    margin-bottom: 16px;
 }
 
 .status-card-icon {
-    width: 52px;
-    height: 52px;
-    flex: 0 0 52px;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #b9d6d2;
-    border-radius: 13px;
-    background: #e7f3f1;
-    color: var(--carebridge-primary);
-    font-size: 23px;
-    font-weight: 700;
+    border: 1px solid rgba(92, 224, 213, 0.35);
+    border-radius: 15px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 181, 170, 0.18),
+            rgba(8, 181, 170, 0.07)
+        );
+    color: #5ce0d5;
+    font-size: 25px;
+    font-weight: 800;
+    box-shadow:
+        inset 0 0 18px rgba(8, 181, 170, 0.04);
 }
 
 .status-card-heading span {
     display: block;
-    margin-bottom: 4px;
-    color: var(--carebridge-primary);
+    margin-bottom: 5px;
+    color: #5ce0d5;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.8px;
 }
 
 .status-card-heading h2 {
     margin: 0;
-    color: var(--carebridge-navy);
-    font-size: 25px;
-    font-weight: 750;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 800;
     line-height: 1.25;
+    letter-spacing: -0.5px;
 }
 
 .status-card-description {
-    margin: 0 0 23px;
-    color: var(--carebridge-muted);
-    font-size: 14px;
-    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 0 30px;
+    color: #91afbd;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-/* FORM */
+
+/* Form */
 
 .appointment-status-card .form-label {
-    margin-bottom: 7px;
-    color: var(--carebridge-text);
+    margin-bottom: 9px;
+    color: #d9edf1;
     font-size: 13px;
     font-weight: 700;
+    letter-spacing: 0.2px;
 }
 
 .appointment-status-card .form-control {
-    min-height: 49px;
-    padding: 10px 14px;
-    border: 1px solid #c5dcd8;
-    border-radius: 9px;
-    background: #f8fcfb;
-    color: var(--carebridge-text);
-    font-size: 14px;
+    min-height: 54px;
+    padding: 12px 16px;
+    border: 1px solid rgba(92, 224, 213, 0.2);
+    border-radius: 11px;
+    background: #08283b;
+    color: #ffffff;
+    font-size: 15px;
+    box-shadow:
+        inset 0 1px 4px rgba(0, 0, 0, 0.12);
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.appointment-status-card .form-control::placeholder {
+    color: #648594;
 }
 
 .appointment-status-card .form-control:hover {
-    border-color: #9fc7c1;
+    border-color: rgba(92, 224, 213, 0.38);
+    background: #0a2e42;
 }
 
 .appointment-status-card .form-control:focus {
-    border-color: var(--carebridge-primary);
-    background: #ffffff;
+    border-color: #08b5aa;
+    background: #0a2e42;
+    color: #ffffff;
+    outline: none;
     box-shadow:
-        0 0 0 3px rgba(15, 118, 110, 0.10);
+        0 0 0 3px rgba(8, 181, 170, 0.12),
+        0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
+
+/* Actions */
+
 .status-form-actions {
-    margin-top: 21px;
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 25px;
 }
 
 .status-check-button,
 .status-clear-button {
-    min-height: 46px;
-    padding: 10px 21px;
-    border-radius: 9px;
+    min-height: 52px;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    border-radius: 11px !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
     line-height: 1.2 !important;
-    font-size: 13px;
-    font-weight: 700;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .status-check-button {
     flex: 1;
-    border: 0;
-    background: var(--carebridge-primary);
+    border: 1px solid #08b5aa !important;
+    background: #08b5aa !important;
+    color: #ffffff !important;
+    box-shadow:
+        0 10px 24px rgba(8, 181, 170, 0.18);
 }
 
 .status-check-button:hover {
-    background: var(--carebridge-primary-dark);
+    border-color: #0ac9bc !important;
+    background: #0ac9bc !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 28px rgba(8, 181, 170, 0.24);
 }
 
 .status-check-button:focus,
 .status-check-button:active {
-    background: var(--carebridge-primary-dark) !important;
+    border-color: #078d96 !important;
+    background: #078d96 !important;
     color: #ffffff !important;
 }
 
+.status-check-button:disabled {
+    border-color: #315c66 !important;
+    background: #315c66 !important;
+    color: #9bb9c1 !important;
+    transform: none;
+    box-shadow: none;
+}
+
 .status-clear-button {
-    min-width: 100px;
-    border: 1px solid #c5dcd8;
-    background: #ffffff;
-    color: var(--carebridge-navy);
+    min-width: 110px;
+    border: 1px solid rgba(216, 232, 237, 0.2) !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    color: #c4dbe2 !important;
 }
 
 .status-clear-button:hover {
-    border-color: #9fc7c1;
-    background: #f4fbfa;
-    color: var(--carebridge-navy);
+    border-color: rgba(92, 224, 213, 0.35) !important;
+    background: rgba(92, 224, 213, 0.08) !important;
+    color: #ffffff !important;
 }
 
+
+/* Alert */
+
 .status-alert {
-    margin-bottom: 22px;
-    border-radius: 9px;
+    margin-bottom: 24px;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 104, 104, 0.25) !important;
+    border-radius: 10px !important;
+    background: rgba(180, 45, 45, 0.12) !important;
+    color: #ffb4b4 !important;
     font-size: 13px;
 }
 
-/* RESULT */
 
-.appointment-status-result {
-    margin-top: 30px;
+/* Results */
+
+.appointment-status-results {
+    margin-top: 34px;
     overflow: hidden;
+    border: 1px solid rgba(92, 224, 213, 0.22);
+    border-radius: 22px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 48, 66, 0.72),
+            rgba(6, 38, 56, 0.72)
+        );
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.2);
 }
 
-/* RESULT HEADER */
-
-.status-result-heading {
-    padding: 22px 27px;
-    background: #f7fbfa;
-    border-bottom: 1px solid #dbe8e6;
+.status-results-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    padding: 27px 30px;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.13);
+    background: rgba(3, 21, 34, 0.35);
+}
+
+.status-results-heading span:first-child {
+    display: block;
+    margin-bottom: 6px;
+    color: #5ce0d5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.status-results-heading h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.status-results-count {
+    padding: 9px 14px;
+    border: 1px solid rgba(92, 224, 213, 0.2);
+    border-radius: 9px;
+    background: rgba(92, 224, 213, 0.06);
+    color: #9de9e2;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.status-appointment-list {
+    display: grid;
+    gap: 18px;
+    padding: 20px;
+}
+
+
+/* Appointment Result */
+
+.appointment-status-result {
+    overflow: hidden;
+    border: 1px solid rgba(92, 224, 213, 0.18);
+    border-radius: 17px;
+    background:
+        linear-gradient(
+            145deg,
+            #0a3042,
+            #062638
+        );
+}
+
+.status-result-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.13);
+    background: rgba(3, 21, 34, 0.32);
 }
 
 .status-result-heading span:first-child {
     display: block;
-    margin-bottom: 4px;
-    color: var(--carebridge-primary);
-    font-size: 9px;
+    margin-bottom: 6px;
+    color: #5ce0d5;
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.7px;
 }
 
 .status-result-heading h2 {
     margin: 0;
-    color: var(--carebridge-navy);
-    font-size: 24px;
-    font-weight: 750;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.25;
 }
 
 .appointment-status-badge {
-    min-width: 105px;
-    padding: 8px 15px;
-    border-radius: 20px;
+    min-width: 112px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
     text-align: center;
     font-size: 11px !important;
     font-weight: 800 !important;
-    letter-spacing: 0.4px !important;
+    letter-spacing: 0.8px !important;
 }
 
 .appointment-status-badge.pending {
-    background: #fff3d6;
-    color: #a76500 !important;
+    border-color: rgba(255, 190, 73, 0.25);
+    background: rgba(255, 190, 73, 0.1);
+    color: #ffc65b !important;
 }
 
 .appointment-status-badge.confirmed {
-    background: #e2f6ed;
-    color: #087443 !important;
+    border-color: rgba(104, 213, 138, 0.28);
+    background: rgba(104, 213, 138, 0.1);
+    color: #68d58a !important;
 }
 
 .appointment-status-badge.completed {
-    background: #e3f0fb;
-    color: #245d8f !important;
+    border-color: rgba(92, 224, 213, 0.28);
+    background: rgba(92, 224, 213, 0.1);
+    color: #5ce0d5 !important;
 }
 
 .appointment-status-badge.cancelled {
-    background: #fde8e8;
-    color: #b42318 !important;
+    border-color: rgba(255, 105, 120, 0.28);
+    background: rgba(255, 105, 120, 0.1);
+    color: #ff8290 !important;
 }
 
-/* DETAILS */
+
+/* Details */
 
 .status-details {
-    padding: 23px 27px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 22px 38px;
+    padding: 0 30px;
 }
 
 .status-detail {
     min-width: 0;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.11);
+}
+
+.status-detail:nth-child(odd) {
+    padding-right: 35px;
+}
+
+.status-detail:nth-child(even) {
+    padding-left: 35px;
+    border-left: 1px solid rgba(92, 224, 213, 0.11);
 }
 
 .status-detail span {
     display: block;
-    margin-bottom: 5px;
-    color: var(--carebridge-primary);
-    font-size: 9px;
+    margin-bottom: 7px;
+    color: #70a1b2;
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.3px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
 }
 
 .status-detail strong {
     display: block;
-    color: var(--carebridge-navy);
-    font-size: 13px;
+    color: #edf8fa;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
 }
 
-/* STATUS MESSAGE */
+
+/* Status Message */
 
 .status-message {
-    margin: 0 27px 25px;
-    padding: 14px 17px;
-    border-radius: 8px;
+    margin: 25px 30px 30px;
+    padding: 16px 18px;
+    border-radius: 10px;
 }
 
 .status-message p {
     margin: 0;
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
 }
 
 .status-message.pending {
-    background: #fff8e8;
-    color: #8a5a00;
+    border: 1px solid rgba(255, 190, 73, 0.18);
+    background: rgba(255, 190, 73, 0.07);
+    color: #ffd477;
 }
 
 .status-message.confirmed {
-    background: #edf9f4;
-    color: #087443;
+    border: 1px solid rgba(104, 213, 138, 0.18);
+    background: rgba(104, 213, 138, 0.07);
+    color: #7de398;
 }
 
 .status-message.completed {
-    background: #eef6fb;
-    color: #245d8f;
+    border: 1px solid rgba(92, 224, 213, 0.18);
+    background: rgba(92, 224, 213, 0.07);
+    color: #74e6dc;
 }
 
 .status-message.cancelled {
-    background: #fff0f0;
-    color: #a61b1b;
+    border: 1px solid rgba(255, 105, 120, 0.18);
+    background: rgba(255, 105, 120, 0.07);
+    color: #ff9ba6;
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 767px) {
+/* Responsive */
+
+@media (max-width: 991px) {
     .appointment-status-header {
-        padding: 38px 0 32px;
-    }
-
-    .appointment-status-header-content h1 {
-        font-size: 34px;
+        padding: 70px 0 62px;
     }
 
     .appointment-status-section {
-        padding: 32px 0 55px;
+        padding: 60px 0 80px;
     }
 
     .appointment-status-card {
-        padding: 27px 21px;
-        border-radius: 17px;
+        padding: 36px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .appointment-status-header {
+        padding: 58px 0 52px;
+    }
+
+    .appointment-status-header-content h1 {
+        font-size: 43px;
+        letter-spacing: -1.7px;
+    }
+
+    .appointment-status-header-content p {
+        font-size: 15px;
+    }
+
+    .appointment-status-section {
+        padding: 48px 0 65px;
+    }
+
+    .appointment-status-card {
+        padding: 30px 24px;
+        border-radius: 18px;
+    }
+
+    .status-card-heading {
+        align-items: flex-start;
+    }
+
+    .status-card-heading h2 {
+        font-size: 24px;
     }
 
     .status-form-actions {
@@ -350,43 +595,127 @@
         width: 100%;
     }
 
+    .status-results-heading {
+        padding: 23px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .status-appointment-list {
+        padding: 14px;
+    }
+
     .status-result-heading {
-        padding: 20px;
+        padding: 23px;
         align-items: flex-start;
         flex-direction: column;
     }
 
     .status-details {
-        padding: 20px;
         grid-template-columns: 1fr;
-        gap: 18px;
+        padding: 0 23px;
+    }
+
+    .status-detail,
+    .status-detail:nth-child(odd),
+    .status-detail:nth-child(even) {
+        padding: 19px 0;
+        border-left: 0;
     }
 
     .status-message {
-        margin: 0 20px 20px;
+        margin: 22px 23px 23px;
     }
 }
 
+
 @media (max-width: 575px) {
+    .appointment-status-header {
+        padding: 48px 0 44px;
+    }
+
+    .appointment-status-header-content span {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
     .appointment-status-header-content h1 {
-        font-size: 31px;
+        font-size: 36px;
+        letter-spacing: -1.2px;
+    }
+
+    .appointment-status-header-content p {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .appointment-status-section {
+        padding: 40px 0 55px;
+    }
+
+    .appointment-status-card {
+        padding: 25px 19px;
+        border-radius: 17px;
     }
 
     .status-card-heading {
-        align-items: flex-start;
+        gap: 13px;
     }
 
     .status-card-icon {
-        width: 50px;
-        height: 50px;
-        flex-basis: 50px;
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+        border-radius: 13px;
+    }
+
+    .status-card-heading span {
+        font-size: 9px;
     }
 
     .status-card-heading h2 {
-        font-size: 23px;
+        font-size: 21px;
+    }
+
+    .status-card-description {
+        font-size: 14px;
+    }
+
+    .appointment-status-card .form-control {
+        min-height: 52px;
+        font-size: 14px;
+    }
+
+    .status-results-heading {
+        padding: 21px 19px;
+    }
+
+    .status-results-heading h2 {
+        font-size: 21px;
+    }
+
+    .status-appointment-list {
+        padding: 10px;
+    }
+
+    .status-result-heading {
+        padding: 21px 19px;
     }
 
     .status-result-heading h2 {
-        font-size: 22px;
+        font-size: 21px;
+    }
+
+    .status-details {
+        padding: 0 19px;
+    }
+
+    .status-detail strong {
+        font-size: 14px;
+    }
+
+    .status-message {
+        margin: 20px 19px 20px;
     }
 }

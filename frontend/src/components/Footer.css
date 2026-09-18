@@ -1,0 +1,178 @@
+/* frontend/src/components/Footer.css */
+
+.carebridge-footer {
+    position: relative;
+
+    padding: 48px 0 22px;
+
+    color: #d8e8ed;
+
+    background: #051d2b;
+
+    border-top: 1px solid rgba(8, 181, 170, 0.24);
+
+    box-shadow:
+        0 -5px 18px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Logo */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+.footer-logo {
+    display: block;
+
+    width: 220px;
+    height: auto;
+
+    max-width: 100%;
+}
+
+
+/* Description */
+
+.footer-description {
+    max-width: 450px;
+
+    margin: 0;
+
+    color: #91b1bb;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* Headings */
+
+.carebridge-footer h5 {
+    margin: 0 0 15px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* Links */
+
+.carebridge-footer .nav-link {
+    width: fit-content;
+
+    padding: 4px 0;
+
+    color: #91b1bb !important;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.carebridge-footer .nav-link:hover {
+    color: #5ce0d5 !important;
+
+    transform: translateX(3px);
+}
+
+
+/* Contact */
+
+.footer-contact p {
+    margin: 0 0 9px;
+
+    color: #91b1bb;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-contact p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Divider */
+
+.carebridge-footer hr {
+    margin: 34px 0 18px;
+
+    border: 0;
+
+    border-top: 1px solid rgba(8, 181, 170, 0.16);
+
+    opacity: 1;
+}
+
+
+/* Bottom */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #648894;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer-bottom p:last-child {
+    color: #4ca9a5;
+}
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .carebridge-footer {
+        padding: 42px 0 20px;
+    }
+
+    .footer-logo {
+        width: 200px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+}
+
+@media (max-width: 575px) {
+    .footer-logo {
+        width: 180px;
+    }
+
+    .footer-description {
+        font-size: 12px;
+    }
+
+    .carebridge-footer .nav-link,
+    .footer-contact p {
+        font-size: 12px;
+    }
+
+    .footer-bottom p {
+        font-size: 10px;
+    }
+}

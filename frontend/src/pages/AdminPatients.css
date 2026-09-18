@@ -1,67 +1,132 @@
 /* frontend/src/pages/AdminPatients.css */
 
 .admin-patients-page {
-    min-height: 70vh;
-    background: #e3eeec;
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            180deg,
+            #031522 0%,
+            #061d2d 52%,
+            #031522 100%
+        );
+    color: #ffffff;
 }
+
+
+/* Header */
 
 .admin-patients-header {
     padding: 45px 0 38px;
-    background: linear-gradient(
-        135deg,
-        #d5e4e1 0%,
-        #e3eeec 100%
-    );
-    border-bottom: 1px solid var(--carebridge-border);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(6, 29, 45, 0.98),
+            rgba(3, 21, 34, 0.96)
+        );
+    border-bottom: 1px solid rgba(92, 224, 213, 0.12);
 }
 
 .admin-page-label {
-    color: var(--carebridge-primary);
+    color: #5ce0d5;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.7px;
 }
 
 .admin-patients-header h1 {
     margin: 8px 0 10px;
-    color: var(--carebridge-navy);
+    color: #ffffff;
     font-size: clamp(36px, 5vw, 50px);
-    font-weight: 750;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
 }
 
 .admin-patients-header p {
     margin: 0;
-    color: var(--carebridge-muted);
+    color: #91afbd;
     font-size: 16px;
     line-height: 1.5;
 }
 
+
+/* Add Patient */
+
 .admin-add-button {
     min-height: 46px;
     padding: 0 21px;
-    border: 0;
-    border-radius: 9px;
-    background: var(--carebridge-primary);
-    color: #ffffff;
+    border: 1px solid #08b5aa !important;
+    border-radius: 9px !important;
+    background: #08b5aa !important;
+    color: #ffffff !important;
     font-size: 13px;
     font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow:
+        0 8px 20px rgba(8, 181, 170, 0.14);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .admin-add-button:hover {
-    background: var(--carebridge-primary-dark);
+    border-color: #0ac9bc !important;
+    background: #0ac9bc !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 24px rgba(8, 181, 170, 0.2);
 }
+
+
+/* Content */
 
 .admin-patients-content {
     padding: 35px 0 70px;
 }
 
+
+/* Alerts */
+
+.admin-patients-content .alert {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.admin-patients-content .alert-danger {
+    border: 1px solid rgba(255, 104, 104, 0.25);
+    background: rgba(180, 45, 45, 0.12);
+    color: #ffb4b4;
+}
+
+.admin-patients-content .alert-success {
+    border: 1px solid rgba(104, 213, 138, 0.25);
+    background: rgba(104, 213, 138, 0.10);
+    color: #8ce5a3;
+}
+
+
+/* Patients Table Card */
+
 .patients-table-card {
     overflow: hidden;
-    border: 2px solid #3f8586;
+    border: 1px solid rgba(92, 224, 213, 0.22);
     border-radius: 18px;
-    background: #ffffff;
-    box-shadow: 0 10px 25px rgba(18, 59, 93, 0.10);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 48, 66, 0.94),
+            rgba(5, 35, 49, 0.98)
+        );
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Table Heading */
 
 .patients-table-heading {
     display: flex;
@@ -69,35 +134,39 @@
     justify-content: space-between;
     gap: 20px;
     padding: 25px 30px;
-    background: #ffffff;
-    border-bottom: 1px solid #c9ddda;
+    background: rgba(8, 40, 59, 0.55);
+    border-bottom: 1px solid rgba(92, 224, 213, 0.12);
 }
 
 .patients-table-heading span {
-    color: var(--carebridge-primary);
+    color: #5ce0d5;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.5px;
 }
 
 .patients-table-heading h2 {
     margin: 5px 0 0;
-    color: var(--carebridge-navy);
+    color: #ffffff;
     font-size: 23px;
-    font-weight: 750;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .patient-count {
     min-width: 70px;
     padding: 8px 14px;
-    border: 1px solid #b9d6d2;
-    border-radius: 20px;
-    background: #e7f3f1;
-    color: var(--carebridge-primary);
+    border: 1px solid rgba(92, 224, 213, 0.24);
+    border-radius: 9px;
+    background: rgba(8, 181, 170, 0.08);
+    color: #5ce0d5;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     text-align: center;
 }
+
+
+/* Table */
 
 .patients-table-wrapper {
     overflow-x: auto;
@@ -108,48 +177,49 @@
     min-width: 1050px;
     margin: 0;
     border-collapse: collapse;
-    background: #ffffff !important;
+    background: #061f30 !important;
 }
 
 .patients-table thead {
-    background: #f7fbfa !important;
+    background: #08283b !important;
 }
 
 .patients-table thead th {
     padding: 15px 18px;
-    color: #315b6c;
-    background: #f7fbfa !important;
-    border-bottom: 1px solid #c9ddda;
-    font-size: 11px;
+    color: #79a6b5;
+    background: #08283b !important;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.13);
+    font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
 .patients-table tbody {
-    background: #ffffff !important;
+    background: #061f30 !important;
 }
 
 .patients-table tbody tr {
-    background: #ffffff !important;
+    background: #061f30 !important;
+    transition: background-color 0.2s ease;
 }
 
 .patients-table tbody tr:hover {
-    background: #f8fcfb !important;
+    background: #08283b !important;
 }
 
 .patients-table tbody td {
     padding: 17px 18px;
-    color: #32627a;
-    background: #ffffff !important;
-    border-bottom: 1px solid #e1ecea;
+    color: #8fb1bd;
+    background: #061f30 !important;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.08);
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .patients-table tbody tr:hover td {
-    background: #f8fcfb !important;
+    background: #08283b !important;
 }
 
 .patients-table tbody tr:last-child td {
@@ -157,14 +227,17 @@
 }
 
 .patients-table tbody td strong {
-    color: var(--carebridge-navy);
+    color: #eaf7fa;
     font-weight: 750;
 }
 
 .patient-id {
-    color: var(--carebridge-primary) !important;
+    color: #5ce0d5 !important;
     font-weight: 800 !important;
 }
+
+
+/* Blood Group */
 
 .blood-group {
     display: inline-flex;
@@ -172,13 +245,16 @@
     justify-content: center;
     min-width: 44px;
     padding: 6px 9px;
-    border: 1px solid #e6baba;
+    border: 1px solid rgba(255, 135, 148, 0.24);
     border-radius: 8px;
-    color: #a13f3f;
-    background: #fff0f0 !important;
+    color: #ff8794;
+    background: rgba(255, 105, 120, 0.08) !important;
     font-size: 11px;
     font-weight: 800;
 }
+
+
+/* Patient Actions */
 
 .patient-actions {
     display: flex;
@@ -188,73 +264,121 @@
 
 .edit-patient-button,
 .delete-patient-button {
-    min-height: 34px;
-    padding: 5px 11px;
-    border-radius: 8px;
-    font-size: 11px;
-    font-weight: 700;
+    min-height: 20px;
+    padding: 4px 13px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.edit-patient-button:hover,
+.delete-patient-button:hover {
+    transform: translateY(-1px);
 }
 
 .edit-patient-button {
-    color: var(--carebridge-primary);
-    border: 1px solid #8fbfba;
-    background: #e9f6f4;
+    color: #5ce0d5 !important;
+    border: 1px solid rgba(92, 224, 213, 0.28) !important;
+    background: rgba(8, 181, 170, 0.07) !important;
 }
 
 .edit-patient-button:hover {
-    color: #ffffff;
-    border-color: var(--carebridge-primary);
-    background: var(--carebridge-primary);
+    color: #031522 !important;
+    border-color: #5ce0d5 !important;
+    background: #5ce0d5 !important;
 }
 
 .delete-patient-button {
-    color: #a13f3f;
-    border: 1px solid #e3aaaa;
-    background: #fff1f1;
+    color: #ff8794 !important;
+    border: 1px solid rgba(255, 105, 120, 0.25) !important;
+    background: rgba(255, 105, 120, 0.06) !important;
 }
 
 .delete-patient-button:hover {
-    color: #ffffff;
-    border-color: #a13f3f;
-    background: #a13f3f;
+    color: #ffffff !important;
+    border-color: #d95465 !important;
+    background: #d95465 !important;
 }
+
+
+/* Empty State */
 
 .patients-empty-state {
     padding: 65px 30px;
-    background: #ffffff;
+    background: #061f30;
     text-align: center;
 }
 
 .patients-empty-state strong {
     display: block;
     margin-bottom: 8px;
-    color: var(--carebridge-navy);
+    color: #eaf7fa;
     font-size: 19px;
 }
 
 .patients-empty-state p {
     margin: 0;
-    color: var(--carebridge-muted);
+    color: #82a5b3;
     font-size: 14px;
 }
 
+
+/* Modal */
+
+.modal-content {
+    overflow: hidden;
+    border: 1px solid rgba(92, 224, 213, 0.22) !important;
+    border-radius: 16px !important;
+    background: #061f30 !important;
+    color: #ffffff;
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.35);
+}
+
+.modal-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(92, 224, 213, 0.12) !important;
+    background: #08283b !important;
+}
+
 .modal-title {
-    color: var(--carebridge-navy);
-    font-weight: 750;
+    color: #ffffff !important;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
 }
 
 .modal-body {
     padding: 28px;
+    background: #061f30 !important;
 }
 
 .modal-footer {
     padding: 18px 28px;
-    border-top: 1px solid var(--carebridge-border);
+    border-top: 1px solid rgba(92, 224, 213, 0.12) !important;
+    background: #061f30 !important;
 }
+
+
+/* Modal Form */
 
 .modal-body .form-label {
     margin-bottom: 7px;
-    color: var(--carebridge-text);
+    color: #d8edf1;
     font-size: 13px;
     font-weight: 650;
 }
@@ -262,32 +386,84 @@
 .modal-body .form-control,
 .modal-body .form-select {
     min-height: 46px;
-    border-color: #cfe1df;
+    border: 1px solid rgba(92, 224, 213, 0.18);
     border-radius: 9px;
+    background: #08283b !important;
+    color: #ffffff !important;
+    font-size: 13px;
+}
+
+.modal-body .form-control::placeholder {
+    color: #628391;
 }
 
 .modal-body .form-control:focus,
 .modal-body .form-select:focus {
-    border-color: var(--carebridge-primary);
-    box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.12);
+    border-color: #08b5aa;
+    background: #08283b !important;
+    color: #ffffff !important;
+    box-shadow:
+        0 0 0 0.2rem rgba(8, 181, 170, 0.10);
+}
+
+.modal-body .form-select option {
+    background: #08283b;
+    color: #ffffff;
+}
+
+
+/* Modal Alert */
+
+.modal-body .alert {
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.modal-body .alert-danger {
+    border: 1px solid rgba(255, 104, 104, 0.25);
+    background: rgba(180, 45, 45, 0.12);
+    color: #ffb4b4;
+}
+
+
+/* Modal Buttons */
+
+.modal-footer .btn-light {
+    min-height: 42px;
+    padding: 0 20px;
+    border: 1px solid rgba(92, 224, 213, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #9dbac2;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.modal-footer .btn-light:hover {
+    border-color: rgba(92, 224, 213, 0.3);
+    background: rgba(92, 224, 213, 0.07);
+    color: #ffffff;
 }
 
 .save-patient-button {
     min-height: 42px;
     padding: 0 20px;
-    border: 0;
-    border-radius: 8px;
-    background: var(--carebridge-primary);
-    color: #ffffff;
+    border: 1px solid #08b5aa !important;
+    border-radius: 8px !important;
+    background: #08b5aa !important;
+    color: #ffffff !important;
+    font-size: 12px;
     font-weight: 700;
+    letter-spacing: 0.2px;
 }
 
 .save-patient-button:hover {
-    background: var(--carebridge-primary-dark);
+    border-color: #0ac9bc !important;
+    background: #0ac9bc !important;
 }
 
 
-/* RESPONSIVE */
+/* Responsive */
 
 @media (max-width: 767px) {
     .admin-patients-header {
@@ -315,5 +491,50 @@
 
     .modal-body {
         padding: 20px;
+    }
+
+    .modal-header {
+        padding: 18px 20px;
+    }
+
+    .modal-footer {
+        padding: 16px 20px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .admin-patients-header {
+        padding: 32px 20px;
+    }
+
+    .admin-patients-content {
+        padding: 25px 15px 45px;
+    }
+
+    .admin-patients-header h1 {
+        font-size: 34px;
+    }
+
+    .admin-patients-header p {
+        font-size: 13px;
+    }
+
+    .patients-table-heading {
+        padding: 18px;
+    }
+
+    .patients-table-heading h2 {
+        font-size: 20px;
+    }
+
+    .patients-table-card {
+        border-radius: 15px;
+    }
+
+    .edit-patient-button,
+    .delete-patient-button {
+        font-size: 12px !important;
+        padding: 4px 13px !important;
     }
 }

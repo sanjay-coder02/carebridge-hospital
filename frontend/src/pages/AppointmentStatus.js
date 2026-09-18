@@ -1,5 +1,3 @@
-// frontend/src/pages/AppointmentStatus.js
-
 import { useState } from "react";
 import {
     Alert,
@@ -15,19 +13,10 @@ const API_URL =
     `${process.env.REACT_APP_API_URL || "http://localhost:8082/api"}/appointments`;
 
 function AppointmentStatus() {
-    const [appointmentId, setAppointmentId] =
-        useState("");
-
     const [phone, setPhone] = useState("");
-
-    const [appointment, setAppointment] =
-        useState(null);
-
-    const [loading, setLoading] =
-        useState(false);
-
-    const [error, setError] =
-        useState("");
+    const [appointments, setAppointments] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     function normalizePhone(value) {
         return value.replace(/\D/g, "");
@@ -37,20 +26,11 @@ function AppointmentStatus() {
         event.preventDefault();
 
         setError("");
-        setAppointment(null);
+        setAppointments("");
         setLoading(true);
 
         try {
-            const id = Number(appointmentId);
-
-            if (!Number.isInteger(id) || id <= 0) {
-                throw new Error(
-                    "Please enter a valid appointment ID."
-                );
-            }
-
-            const enteredPhone =
-                normalizePhone(phone);
+            const enteredPhone = normalizePhone(phone);
 
             if (!enteredPhone) {
                 throw new Error(
@@ -59,16 +39,17 @@ function AppointmentStatus() {
             }
 
             const response = await fetch(
-                `${API_URL}/${id}`
+                `${API_URL}/by-phone?phone=${encodeURIComponent(
+                    enteredPhone
+                )}`
             );
 
-            const responseText =
-                await response.text();
+            const responseText = await response.text();
 
             if (!response.ok) {
                 if (response.status === 404) {
                     throw new Error(
-                        "Appointment not found."
+                        "No appointments found for this phone number."
                     );
                 }
 
@@ -78,25 +59,17 @@ function AppointmentStatus() {
                 );
             }
 
-            const data =
-                JSON.parse(responseText);
+            const data = JSON.parse(responseText);
 
-            const appointmentPhone =
-                normalizePhone(
-                    data.patient?.phone || ""
-                );
-
-            if (
-                !appointmentPhone ||
-                appointmentPhone !== enteredPhone
-            ) {
+            if (!Array.isArray(data) || data.length === 0) {
                 throw new Error(
-                    "The phone number does not match this appointment."
+                    "No appointments found for this phone number."
                 );
             }
 
-            setAppointment(data);
+            setAppointments(data);
         } catch (statusError) {
+            setAppointments([]);
             setError(
                 statusError.message ||
                 "Unable to check appointment status."
@@ -107,17 +80,33 @@ function AppointmentStatus() {
     }
 
     function handleClear() {
-        setAppointmentId("");
         setPhone("");
-        setAppointment(null);
+        setAppointments([]);
         setError("");
     }
 
-    const status =
-        appointment?.status || "PENDING";
+    function getStatusClass(status) {
+        return (status || "PENDING").toLowerCase();
+    }
 
-    const statusClass =
-        status.toLowerCase();
+    function getStatusMessage(status) {
+        switch (status) {
+            case "PENDING":
+                return "Your appointment request is waiting for hospital confirmation.";
+
+            case "CONFIRMED":
+                return "Your appointment has been confirmed. Please arrive on time for your consultation.";
+
+            case "COMPLETED":
+                return "Your consultation has been completed.";
+
+            case "CANCELLED":
+                return "This appointment has been cancelled.";
+
+            default:
+                return "Please contact the hospital for more information about this appointment.";
+        }
+    }
 
     return (
         <main className="appointment-status-page">
@@ -133,9 +122,8 @@ function AppointmentStatus() {
                         </h1>
 
                         <p>
-                            Check the latest status of your
-                            appointment using your appointment
-                            details.
+                            Enter your registered mobile number
+                            to view your appointment status.
                         </p>
                     </div>
                 </Container>
@@ -162,16 +150,17 @@ function AppointmentStatus() {
                                         </span>
 
                                         <h2>
-                                            View Appointment Status
+                                            Find Your Appointments
                                         </h2>
                                     </div>
                                 </div>
 
                                 <p className="status-card-description">
-                                    Enter the appointment ID
-                                    provided after booking and
-                                    the phone number registered
-                                    with the appointment.
+                                    Enter the mobile number
+                                    registered with your
+                                    appointment. You can view
+                                    all appointments associated
+                                    with that number.
                                 </p>
 
                                 {error && (
@@ -183,77 +172,32 @@ function AppointmentStatus() {
                                     </Alert>
                                 )}
 
-                                <Form
-                                    onSubmit={
-                                        handleSubmit
-                                    }
-                                >
-                                    <Row className="g-3">
-                                        <Col md={6}>
-                                            <Form.Group
-                                                controlId="appointmentStatusId"
-                                            >
-                                                <Form.Label>
-                                                    Appointment ID
-                                                </Form.Label>
+                                <Form onSubmit={handleSubmit}>
+                                    <Form.Group
+                                        controlId="appointmentStatusPhone"
+                                    >
+                                        <Form.Label>
+                                            Registered Phone Number
+                                        </Form.Label>
 
-                                                <Form.Control
-                                                    type="number"
-                                                    min="1"
-                                                    value={
-                                                        appointmentId
-                                                    }
-                                                    onChange={(
-                                                        event
-                                                    ) =>
-                                                        setAppointmentId(
-                                                            event
-                                                                .target
-                                                                .value
-                                                        )
-                                                    }
-                                                    placeholder="Enter appointment ID"
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </Col>
-
-                                        <Col md={6}>
-                                            <Form.Group
-                                                controlId="appointmentStatusPhone"
-                                            >
-                                                <Form.Label>
-                                                    Registered Phone Number
-                                                </Form.Label>
-
-                                                <Form.Control
-                                                    type="tel"
-                                                    value={
-                                                        phone
-                                                    }
-                                                    onChange={(
-                                                        event
-                                                    ) =>
-                                                        setPhone(
-                                                            event
-                                                                .target
-                                                                .value
-                                                        )
-                                                    }
-                                                    placeholder="Enter phone number"
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
+                                        <Form.Control
+                                            type="tel"
+                                            value={phone}
+                                            onChange={(event) =>
+                                                setPhone(
+                                                    event.target.value
+                                                )
+                                            }
+                                            placeholder="Enter your registered phone number"
+                                            required
+                                        />
+                                    </Form.Group>
 
                                     <div className="status-form-actions">
                                         <Button
                                             type="submit"
                                             className="status-check-button"
-                                            disabled={
-                                                loading
-                                            }
+                                            disabled={loading}
                                         >
                                             {loading
                                                 ? "Checking..."
@@ -263,12 +207,8 @@ function AppointmentStatus() {
                                         <Button
                                             type="button"
                                             className="status-clear-button"
-                                            onClick={
-                                                handleClear
-                                            }
-                                            disabled={
-                                                loading
-                                            }
+                                            onClick={handleClear}
+                                            disabled={loading}
                                         >
                                             Clear
                                         </Button>
@@ -278,140 +218,159 @@ function AppointmentStatus() {
                         </Col>
                     </Row>
 
-                    {appointment && (
+                    {appointments.length > 0 && (
                         <Row className="justify-content-center">
                             <Col
                                 xs={12}
                                 md={10}
-                                lg={8}
-                                xl={7}
+                                lg={10}
+                                xl={9}
                             >
-                                <div className="appointment-status-result">
-                                    <div className="status-result-heading">
+                                <div className="appointment-status-results">
+                                    <div className="status-results-heading">
                                         <div>
                                             <span>
-                                                APPOINTMENT DETAILS
+                                                YOUR APPOINTMENTS
                                             </span>
 
                                             <h2>
-                                                Appointment #
-                                                {
-                                                    appointment.id
-                                                }
+                                                Appointment Status
                                             </h2>
                                         </div>
 
-                                        <span
-                                            className={`appointment-status-badge ${statusClass}`}
-                                        >
-                                            {status}
-                                        </span>
-                                    </div>
-
-                                    <div className="status-details">
-                                        <div className="status-detail">
-                                            <span>
-                                                Patient Name
-                                            </span>
-
-                                            <strong>
-                                                {appointment
-                                                    .patient
-                                                    ?.name ||
-                                                    "Not available"}
-                                            </strong>
-                                        </div>
-
-                                        <div className="status-detail">
-                                            <span>
-                                                Doctor
-                                            </span>
-
-                                            <strong>
-                                                {appointment
-                                                    .doctor
-                                                    ?.name ||
-                                                    "Not available"}
-                                            </strong>
-                                        </div>
-
-                                        <div className="status-detail">
-                                            <span>
-                                                Specialization
-                                            </span>
-
-                                            <strong>
-                                                {appointment
-                                                    .doctor
-                                                    ?.specialization ||
-                                                    "Not available"}
-                                            </strong>
-                                        </div>
-
-                                        <div className="status-detail">
-                                            <span>
-                                                Appointment Date
-                                            </span>
-
-                                            <strong>
-                                                {appointment.appointmentDate ||
-                                                    "Not available"}
-                                            </strong>
-                                        </div>
-
-                                        <div className="status-detail">
-                                            <span>
-                                                Appointment Time
-                                            </span>
-
-                                            <strong>
-                                                {appointment.appointmentTime ||
-                                                    "Not available"}
-                                            </strong>
-                                        </div>
-
-                                        <div className="status-detail">
-                                            <span>
-                                                Reason for Visit
-                                            </span>
-
-                                            <strong>
-                                                {appointment.reason ||
-                                                    "Not available"}
-                                            </strong>
+                                        <div className="status-results-count">
+                                            {appointments.length}{" "}
+                                            {appointments.length === 1
+                                                ? "Appointment"
+                                                : "Appointments"}
                                         </div>
                                     </div>
 
-                                    <div
-                                        className={`status-message ${statusClass}`}
-                                    >
-                                        {status ===
-                                            "PENDING" && (
-                                            <p>
-                                                Your appointment
-                                                request is waiting
-                                                for hospital
-                                                confirmation.
-                                            </p>
-                                        )}
+                                    <div className="status-appointment-list">
+                                        {appointments.map(
+                                            (appointment) => {
+                                                const status =
+                                                    appointment.status ||
+                                                    "PENDING";
 
-                                        {status ===
-                                            "CONFIRMED" && (
-                                            <p>
-                                                Your appointment has
-                                                been confirmed.
-                                                Please arrive on
-                                                time for your
-                                                consultation.
-                                            </p>
-                                        )}
+                                                const statusClass =
+                                                    getStatusClass(status);
 
-                                        {status ===
-                                            "CANCELLED" && (
-                                            <p>
-                                                This appointment has
-                                                been cancelled.
-                                            </p>
+                                                return (
+                                                    <article
+                                                        className="appointment-status-result"
+                                                        key={
+                                                            appointment.id
+                                                        }
+                                                    >
+                                                        <div className="status-result-heading">
+                                                            <div>
+                                                                <span>
+                                                                    APPOINTMENT DETAILS
+                                                                </span>
+
+                                                                <h2>
+                                                                    Appointment #
+                                                                    {
+                                                                        appointment.id
+                                                                    }
+                                                                </h2>
+                                                            </div>
+
+                                                            <span
+                                                                className={`appointment-status-badge ${statusClass}`}
+                                                            >
+                                                                {status}
+                                                            </span>
+                                                        </div>
+
+                                                        <div className="status-details">
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Patient Name
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.patientName
+                                                                    }
+                                                                </strong>
+                                                            </div>
+
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Doctor
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.doctorName
+                                                                    }
+                                                                </strong>
+                                                            </div>
+
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Specialization
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.specialization
+                                                                    }
+                                                                </strong>
+                                                            </div>
+
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Appointment Date
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.appointmentDate
+                                                                    }
+                                                                </strong>
+                                                            </div>
+
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Appointment Time
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.appointmentTime
+                                                                    }
+                                                                </strong>
+                                                            </div>
+
+                                                            <div className="status-detail">
+                                                                <span>
+                                                                    Reason for Visit
+                                                                </span>
+
+                                                                <strong>
+                                                                    {
+                                                                        appointment.reason ||
+                                                                        "Not available"
+                                                                    }
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+
+                                                        <div
+                                                            className={`status-message ${statusClass}`}
+                                                        >
+                                                            <p>
+                                                                {getStatusMessage(
+                                                                    status
+                                                                )}
+                                                            </p>
+                                                        </div>
+                                                    </article>
+                                                );
+                                            }
                                         )}
                                     </div>
                                 </div>

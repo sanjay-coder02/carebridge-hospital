@@ -1,586 +1,1168 @@
 /* frontend/src/pages/Home.css */
 
-/* ================================
-   HOME HERO
-================================ */
+.home-page {
+  --home-navy: #031522;
+  --home-navy-2: #061d2d;
+  --home-navy-3: #08283b;
+  --home-teal: #08b5aa;
+  --home-teal-dark: #078d96;
+  --home-teal-light: #5ce0d5;
+  --home-green: #68d58a;
+  --home-white: #ffffff;
+  --home-text: #d8e8ed;
+  --home-muted: #8da8b7;
+  --home-border: rgba(92, 224, 213, 0.18);
 
-.carebridge-home-intro {
-    padding: 72px 0 64px;
-    background: var(--carebridge-background);
-}
-
-.home-intro-label {
-    display: inline-block;
-    margin-bottom: 16px;
-    color: var(--carebridge-primary);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.carebridge-home-intro h1 {
-    margin: 0;
-    color: var(--carebridge-navy);
-    font-size: clamp(44px, 5vw, 68px);
-    font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -2px;
-}
-
-.carebridge-home-intro h1 span {
-    display: block;
-    color: var(--carebridge-primary);
-}
-
-.carebridge-home-intro p {
-    max-width: 590px;
-    margin: 22px 0 0;
-    color: #58717d;
-    font-size: 18px;
-    line-height: 1.75;
-}
-
-.home-intro-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 30px;
-}
-
-.carebridge-primary-button {
-    min-width: 245px;
-    padding: 15px 28px !important;
-    border: 2px solid var(--carebridge-primary) !important;
-    border-radius: 14px !important;
-    background: var(--carebridge-primary) !important;
-    color: #ffffff !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    box-shadow: 0 8px 18px rgba(15, 118, 110, 0.18);
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.carebridge-primary-button:hover {
-    background: var(--carebridge-primary-dark) !important;
-    border-color: var(--carebridge-primary-dark) !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(15, 118, 110, 0.24);
-}
-
-.carebridge-secondary-button {
-    min-width: 210px;
-    padding: 15px 28px !important;
-    border: 2px solid var(--carebridge-primary) !important;
-    border-radius: 14px !important;
-    background: #ffffff !important;
-    color: var(--carebridge-primary) !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.carebridge-secondary-button:hover {
-    background: var(--carebridge-primary) !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
-}
-
-.home-trust-details {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-top: 38px;
-}
-
-.home-trust-details > div {
-    min-width: 150px;
-    padding: 0 25px;
-    border-left: 1px solid #aec8c5;
-}
-
-.home-trust-details > div:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-.home-trust-details strong {
-    display: block;
-    color: var(--carebridge-navy);
-    font-size: 18px;
-    font-weight: 800;
-}
-
-.home-trust-details span {
-    display: block;
-    margin-top: 7px;
-    color: #58717d;
-    font-size: 14px;
-}
-
-.home-image-container {
-    width: 100%;
-}
-
-.home-banner-wrapper {
-    width: 100%;
-    height: 470px;
-    overflow: hidden;
-    border: 2px solid #9fbab7;
-    border-radius: 28px;
-    background: var(--carebridge-surface);
-    box-shadow:
-        0 14px 34px rgba(18, 59, 93, 0.13);
-}
-
-.home-banner-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 26px;
-    filter: none;
-    transform: scale(1);
+  background: var(--home-navy);
+  color: var(--home-text);
+  overflow: hidden;
 }
 
 
-/* ================================
-   HOME SECTIONS
-================================ */
-.carebridge-section {
-    padding: 72px 0 76px;
-    background: #c5dcda;
-    border-top: 1px solid #b0cfcc;
-    border-bottom: 1px solid #b0cfcc;
-}
-.carebridge-services-section {
-    padding: 72px 0 78px;
-    background: var(--carebridge-surface-soft);
-}
+/* Container */
 
-.carebridge-doctors-preview {
-    padding: 72px 0 78px;
-    background: var(--carebridge-background);
+.home-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
 }
 
 
-/* ================================
-   SECTION HEADINGS
-================================ */
+/* Hero */
 
-.carebridge-section-heading {
-    max-width: 850px;
-    margin: 0 auto 42px;
-    text-align: center;
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 610px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--home-navy);
 }
 
-.carebridge-section-heading > span {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: var(--carebridge-primary);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
-.carebridge-section-heading h2 {
-    margin: 0;
-    color: var(--carebridge-navy);
-    font-size: clamp(34px, 4vw, 48px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 21, 34, 0.78) 0%,
+      rgba(3, 21, 34, 0.78) 20%,
+      rgba(3, 21, 34, 0.48) 38%,
+      rgba(3, 21, 34, 0.25) 56%,
+      rgba(3, 21, 34, 0.07) 72%,
+      rgba(3, 21, 34, 0) 86%
+    );
 }
 
-.carebridge-section-heading p {
-    max-width: 760px;
-    margin: 16px auto 0;
-    color: #58717d;
-    font-size: 16px;
-    line-height: 1.7;
+.home-hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
 }
 
-
-/* ================================
-   LIGHT THEMED CARDS
-================================ */
-
-.carebridge-feature-card,
-.carebridge-service-card,
-.doctor-info-card {
-    overflow: hidden;
-    border: 2px solid #7daaa6 !important;
-    border-radius: 18px !important;
-    background: #c4dcda !important;
-    box-shadow:
-        0 8px 22px rgba(18, 59, 93, 0.10);
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+.home-hero-copy {
+  width: min(650px, 100%);
+  padding: 55px 0;
 }
 
-.carebridge-feature-card:hover,
-.carebridge-service-card:hover,
-.doctor-info-card:hover {
-    transform: translateY(-6px);
-    border-color: #5f9290 !important;
-    background: #b8d3d0 !important;
-    box-shadow:
-        0 16px 30px rgba(18, 59, 93, 0.17);
+.home-hero-label {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 30px;
+  background: rgba(3, 25, 40, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
 }
 
-.carebridge-feature-card .card-body,
-.carebridge-service-card .card-body,
-.doctor-info-card .card-body {
-    padding: 30px;
+.home-hero-label span {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #65df9a;
+  box-shadow: 0 0 12px rgba(101, 223, 154, 0.75);
 }
 
-
-/* ================================
-   CARD ICONS
-================================ */
-
-.carebridge-card-icon,
-.doctor-info-icon {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-    border: 1px solid #86aaa7;
-    border-radius: 15px;
-    background: #eaf4f2;
-    color: var(--carebridge-navy);
-    font-size: 28px;
-    line-height: 1;
+.home-hero h1 {
+  margin: 25px 0 0;
+  color: #ffffff;
+  font-size: clamp(40px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.42);
 }
 
-
-/* ================================
-   CARD TEXT
-================================ */
-
-.carebridge-feature-card .card-title,
-.carebridge-service-card .card-title,
-.doctor-info-card .card-title {
-    margin-bottom: 12px;
-    color: var(--carebridge-navy) !important;
-    font-size: 20px;
-    font-weight: 750;
-    line-height: 1.3;
+.home-hero h1 strong {
+  display: block;
+  color: var(--home-teal-light);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.carebridge-feature-card .card-text,
-.carebridge-service-card .card-text,
-.doctor-info-card .card-text {
-    margin-bottom: 0;
-    color: #426875 !important;
-    font-size: 15px;
-    line-height: 1.7;
+.home-hero-copy > p {
+  max-width: 590px;
+  margin: 25px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.8;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
 }
 
-
-/* ================================
-   DOCTORS PREVIEW
-================================ */
-
-.carebridge-doctors-preview > .container > .row:first-child {
-    margin-bottom: 4px;
+.home-hero-buttons {
+  display: flex;
+  gap: 13px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
-.carebridge-doctors-preview
-    > .container
-    > .row:first-child
-    > div:first-child
-    > span {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: var(--carebridge-primary);
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+.home-button {
+  min-height: 54px;
+  padding: 0 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
-.carebridge-doctors-preview h2 {
-    margin: 0;
-    color: var(--carebridge-navy);
-    font-size: clamp(34px, 4vw, 48px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
-}
-
-.carebridge-doctors-preview p {
-    max-width: 760px;
-    margin: 16px 0 0;
-    color: #58717d;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.view-doctors-button {
-    padding: 14px 25px !important;
-    border: 2px solid var(--carebridge-primary) !important;
-    border-radius: 13px !important;
-    background: transparent !important;
-    color: var(--carebridge-primary) !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.view-doctors-button:hover {
-    background: var(--carebridge-primary) !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow:
-        0 10px 22px rgba(15, 118, 110, 0.18);
+.home-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 
-/* ================================
-   APPOINTMENT CTA
-================================ */
+/* Primary button */
 
-.carebridge-appointment-section {
-    padding: 72px 0;
-    background:
-        linear-gradient(
-            135deg,
-            #0f766e 0%,
-            #176b78 48%,
-            #1b4f70 100%
-        );
+.home-button-primary {
+  color: #ffffff;
+  border: 1px solid rgba(92, 224, 213, 0.35);
+  background: linear-gradient(
+    135deg,
+    #08b6aa,
+    #078ea2
+  );
+  box-shadow:
+    0 14px 30px rgba(4, 174, 166, 0.28);
 }
 
-.carebridge-appointment-section > .container {
-    position: relative;
-}
-
-.carebridge-appointment-section span {
-    display: inline-block;
-    margin-bottom: 13px;
-    color: #c9dfdb;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.carebridge-appointment-section h2 {
-    max-width: 780px;
-    margin: 0;
-    color: #ffffff;
-    font-size: clamp(34px, 4vw, 48px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
-}
-
-.carebridge-appointment-section p {
-    max-width: 700px;
-    margin: 17px 0 0;
-    color: #d7ebee;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.carebridge-cta-button {
-    padding: 15px 28px !important;
-    border: 2px solid #ffffff !important;
-    border-radius: 13px !important;
-    background: #ffffff !important;
-    color: #0f766e !important;
-    font-size: 15px !important;
-    font-weight: 750 !important;
-    box-shadow:
-        0 10px 25px rgba(7, 43, 65, 0.18);
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.carebridge-cta-button:hover {
-    background: #c9dfdb !important;
-    border-color: #c9dfdb !important;
-    color: #123b5d !important;
-    transform: translateY(-2px);
-    box-shadow:
-        0 14px 28px rgba(7, 43, 65, 0.24);
+.home-button-primary:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  background: linear-gradient(
+    135deg,
+    #0ac5b8,
+    #079caf
+  );
+  box-shadow:
+    0 18px 38px rgba(4, 174, 166, 0.4);
 }
 
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* Doctors button */
+
+.home-button-secondary {
+  color: #ffffff;
+  border: 1px solid rgba(92, 224, 213, 0.48);
+  background: linear-gradient(
+    135deg,
+    rgba(7, 145, 151, 0.92),
+    rgba(5, 103, 123, 0.92)
+  );
+  box-shadow:
+    0 12px 28px rgba(2, 35, 51, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.home-button-secondary:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  border-color: var(--home-teal-light);
+  background: linear-gradient(
+    135deg,
+    #08b5aa,
+    #087e98
+  );
+  box-shadow:
+    0 18px 38px rgba(4, 174, 166, 0.3);
+}
+
+.home-hero-buttons .home-button-secondary .home-icon {
+  color: #ffffff;
+}
+
+
+/* Hero trust */
+
+.home-hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.home-hero-trust > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-hero-trust > div > .home-icon {
+  width: 25px;
+  height: 25px;
+  color: var(--home-teal-light);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.home-hero-trust span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 9px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.home-hero-trust strong {
+  color: #ffffff;
+  font-size: 10px;
+}
+
+
+/* Stats */
+
+.home-stats {
+  background: #02111d;
+  border-top: 1px solid rgba(92, 224, 213, 0.15);
+  border-bottom: 1px solid rgba(92, 224, 213, 0.15);
+}
+
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.home-stats-grid > div {
+  min-height: 125px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-stats-grid > div:last-child {
+  border-right: 0;
+}
+
+.home-stats-grid strong {
+  color: var(--home-teal-light);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.home-stats-grid span {
+  margin-top: 9px;
+  color: var(--home-muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* Welcome */
+
+.home-welcome {
+  position: relative;
+  padding: 92px 0;
+  background:
+    linear-gradient(
+      135deg,
+      #031522 0%,
+      #061e2f 52%,
+      #031522 100%
+    );
+}
+
+.home-welcome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(92, 224, 213, 0.35),
+    transparent
+  );
+}
+
+.home-welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.home-section-heading-left h2 {
+  max-width: 570px;
+  margin: 13px 0 0;
+  color: #ffffff;
+  font-size: clamp(40px, 4.5vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  font-weight: 800;
+}
+
+.home-section-heading-left h2 strong {
+  display: block;
+  color: var(--home-teal-light);
+}
+
+.home-label {
+  display: inline-block;
+  color: var(--home-teal-light);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.home-heading-line {
+  width: 58px;
+  height: 3px;
+  margin-top: 24px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--home-teal),
+    var(--home-green)
+  );
+}
+
+.home-welcome-text {
+  max-width: 570px;
+  padding: 15px 0 15px 25px;
+  border-left: 1px solid rgba(92, 224, 213, 0.2);
+}
+
+.home-welcome-text h3 {
+  max-width: 520px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.home-welcome-text p {
+  max-width: 500px;
+  margin: 13px 0 0;
+  color: var(--home-muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.home-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--home-teal-light);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.home-text-link:hover {
+  color: #ffffff;
+}
+
+.home-text-link .home-icon {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* Trust */
+
+.home-trust {
+  position: relative;
+  padding: 105px 0;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(8, 181, 170, 0.12),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #061d2d 0%,
+      #041725 100%
+    );
+  border-top: 1px solid rgba(92, 224, 213, 0.08);
+}
+
+.home-trust::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(92, 224, 213, 0.25),
+    transparent
+  );
+}
+
+.home-centered-heading {
+  max-width: 720px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.home-centered-heading h2 {
+  margin: 13px 0 0;
+  color: #ffffff;
+  font-size: clamp(38px, 4vw, 53px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.home-centered-heading h2 strong {
+  color: var(--home-teal-light);
+}
+
+.home-centered-heading p {
+  margin: 17px auto 0;
+  color: var(--home-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.home-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.home-glass-card {
+  position: relative;
+  min-height: 255px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 224, 213, 0.2);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 59, 78, 0.78),
+      rgba(6, 32, 48, 0.72)
+    );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 22px 50px rgba(0, 0, 0, 0.28);
+  transition: 0.3s ease;
+}
+
+.home-glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--home-teal),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.home-glass-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(92, 224, 213, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 60px rgba(0, 0, 0, 0.35);
+}
+
+.home-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.home-card-top > span {
+  color: #668594;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.home-card-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(92, 224, 213, 0.3);
+  border-radius: 14px;
+  color: var(--home-teal-light);
+  background: rgba(8, 181, 170, 0.11);
+}
+
+.home-card-icon .home-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.home-glass-card h3 {
+  margin: 35px 0 11px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.home-glass-card p {
+  margin: 0;
+  color: #91aebb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* Services */
+
+.home-services {
+  position: relative;
+  padding: 92px 0;
+  background:
+    linear-gradient(
+      135deg,
+      #08283b 0%,
+      #07364b 45%,
+      #06263a 100%
+    );
+  border-top: 1px solid rgba(92, 224, 213, 0.12);
+  border-bottom: 1px solid rgba(92, 224, 213, 0.12);
+}
+
+.home-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 181, 170, 0.035),
+      transparent 30%,
+      transparent 70%,
+      rgba(8, 181, 170, 0.035)
+    );
+  pointer-events: none;
+}
+
+.home-services-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.home-services-heading > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-services-heading h2 {
+  max-width: 700px;
+  margin: 13px 0 0;
+  color: #ffffff;
+  font-size: clamp(38px, 4vw, 53px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.home-services-heading h2 strong {
+  display: block;
+  color: var(--home-teal-light);
+}
+
+.home-services-heading > p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #9bb5c0;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.home-services-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.home-service-card {
+  min-height: 275px;
+  padding: 29px;
+  border: 1px solid rgba(112, 226, 217, 0.2);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(3, 30, 47, 0.88),
+      rgba(5, 41, 59, 0.72)
+    );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 20px 45px rgba(0, 0, 0, 0.23);
+  transition: 0.3s ease;
+}
+
+.home-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(92, 224, 213, 0.45);
+  background:
+    linear-gradient(
+      150deg,
+      rgba(5, 48, 68, 0.95),
+      rgba(5, 57, 72, 0.84)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 28px 60px rgba(0, 0, 0, 0.3);
+}
+
+.home-service-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.home-service-header > span {
+  color: #6f8b98;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.home-service-card h3 {
+  margin: 33px 0 11px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.home-service-card p {
+  margin: 0;
+  color: #91aebb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.home-service-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: var(--home-teal-light);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.home-service-card > a:hover {
+  color: #ffffff;
+}
+
+.home-service-card > a .home-icon {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* Specialties */
+
+.home-specialties {
+  padding: 95px 0;
+  background:
+    linear-gradient(
+      180deg,
+      #031522 0%,
+      #041a29 100%
+    );
+}
+
+.home-specialties-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 45px;
+}
+
+.home-specialties-heading h2 {
+  max-width: 650px;
+  margin: 13px 0 0;
+  color: #ffffff;
+  font-size: clamp(38px, 4vw, 53px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.home-specialties-heading h2 strong {
+  display: block;
+  color: var(--home-teal-light);
+}
+
+.home-outline-button {
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(85, 221, 210, 0.25);
+  border-radius: 11px;
+  color: var(--home-teal-light);
+  background: rgba(8, 180, 170, 0.08);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.home-outline-button:hover {
+  color: #ffffff;
+  border-color: var(--home-teal);
+  background: var(--home-teal);
+}
+
+.home-outline-button .home-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.home-specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+
+.home-specialty-card {
+  position: relative;
+  min-height: 225px;
+  padding: 27px;
+  border: 1px solid rgba(92, 224, 213, 0.17);
+  border-radius: 18px;
+  background: rgba(9, 42, 59, 0.56);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: 0.25s ease;
+}
+
+.home-specialty-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(92, 224, 213, 0.38);
+  background: rgba(14, 58, 76, 0.72);
+}
+
+.home-specialty-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(92, 224, 213, 0.22);
+  border-radius: 14px;
+  color: var(--home-teal-light);
+  background: rgba(8, 180, 170, 0.09);
+}
+
+.home-specialty-icon .home-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.home-specialty-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.home-specialty-card p {
+  max-width: 245px;
+  margin: 9px 0 0;
+  color: var(--home-muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.home-specialty-arrow {
+  position: absolute;
+  right: 19px;
+  bottom: 19px;
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(85, 221, 210, 0.15);
+  border-radius: 9px;
+  color: #6f8b98;
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.home-specialty-arrow .home-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.home-specialty-card:hover .home-specialty-arrow {
+  color: #ffffff;
+  background: var(--home-teal);
+  border-color: var(--home-teal);
+}
+
+
+/* CTA */
+
+.home-cta {
+  padding: 55px 0;
+  background:
+    linear-gradient(
+      180deg,
+      #041a29 0%,
+      #031522 100%
+    );
+}
+
+.home-cta-box {
+  min-height: 245px;
+  padding: 42px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(92, 224, 213, 0.25);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      #07304a 0%,
+      #075363 55%,
+      #064653 100%
+    );
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.home-cta-box > div {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-cta-box > div::after {
+  content: "";
+  width: 55px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--home-teal),
+    var(--home-green)
+  );
+}
+
+.home-cta-box h2 {
+  max-width: 750px;
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+}
+
+.home-cta-box h2 strong {
+  display: inline;
+  color: var(--home-teal-light);
+}
+
+.home-cta-box p {
+  max-width: 650px;
+  margin: 16px auto 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .home-trust-grid,
+  .home-services-grid,
+  .home-specialties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 991px) {
-    .carebridge-home-intro {
-        padding: 58px 0 60px;
-    }
+  .home-hero {
+    height: 680px;
+  }
 
-    .home-banner-wrapper {
-        height: 400px;
-    }
+  .home-hero-image {
+    object-position: center 25%;
+  }
 
-    .carebridge-section,
-    .carebridge-services-section,
-    .carebridge-doctors-preview {
-        padding: 62px 0 66px;
-    }
+  .home-hero-content {
+    position: absolute;
+    min-height: 0;
+  }
 
-    .carebridge-appointment-section {
-        padding: 62px 0;
-    }
+  .home-welcome-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-    .home-trust-details {
-        margin-top: 32px;
-    }
+  .home-welcome-text {
+    max-width: 550px;
+    padding: 0 0 0 5px;
+  }
 
-    .carebridge-appointment-section .text-lg-end {
-        margin-top: 28px;
-        text-align: left !important;
-    }
+  .home-services-heading {
+    gap: 15px;
+  }
+
+  .home-specialties-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-cta-box {
+    padding: 40px 35px;
+  }
 }
 
 @media (max-width: 767px) {
-    .carebridge-home-intro {
-        padding: 48px 0 52px;
-    }
+  .home-container {
+    width: min(90% - 32px, 1180px);
+  }
 
-    .carebridge-home-intro h1 {
-        font-size: 44px;
-        letter-spacing: -1.2px;
-    }
+  .home-hero {
+    height: auto;
+    min-height: 520px;
+  }
 
-    .carebridge-home-intro p {
-        font-size: 16px;
-    }
+  .home-hero-image {
+    height: 420px;
+    object-position: center 75%;
+  }
 
-    .home-intro-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .home-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 21, 34, 0.78) 0%,
+        rgba(3, 21, 34, 0.75) 42%,
+        rgba(3, 21, 34, 0.20) 72%,
+        rgba(3, 21, 34, 0.02) 100%
+      );
+  }
 
-    .carebridge-primary-button,
-    .carebridge-secondary-button {
-        width: 100%;
-        min-width: 0;
-    }
+  .home-hero-content {
+    min-height: 500px;
+    padding: 45px 0;
+  }
 
-    .home-trust-details {
-        flex-wrap: wrap;
-        row-gap: 22px;
-    }
+  .home-hero h1 {
+    font-size: 35px;
+    letter-spacing: -2.5px;
+  }
 
-    .home-trust-details > div {
-        min-width: 33.333%;
-        padding: 0 15px;
-    }
+  .home-hero-buttons {
+    flex-direction: column;
+  }
 
-    .home-trust-details > div:first-child {
-        padding-left: 0;
-    }
+  .home-button {
+    width: 45%;
+  }
 
-    .home-banner-wrapper {
-        height: 340px;
-        border-radius: 22px;
-    }
+  .home-hero-trust {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 65px;
+    margin-top: 35px;
+  }
 
-    .home-banner-image {
-        border-radius: 20px;
-    }
+  .home-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .carebridge-section,
-    .carebridge-services-section,
-    .carebridge-doctors-preview {
-        padding: 54px 0 58px;
-    }
+  .home-stats-grid > div:nth-child(2) {
+    border-right: 0;
+  }
 
-    .carebridge-section-heading {
-        margin-bottom: 32px;
-    }
+  .home-stats-grid > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
 
-    .carebridge-section-heading h2,
-    .carebridge-doctors-preview h2,
-    .carebridge-appointment-section h2 {
-        font-size: 36px;
-    }
+  .home-welcome,
+  .home-trust,
+  .home-services,
+  .home-specialties {
+    padding: 70px 0;
+  }
 
-    .carebridge-feature-card .card-body,
-    .carebridge-service-card .card-body,
-    .doctor-info-card .card-body {
-        padding: 26px;
-    }
+  .home-trust-grid,
+  .home-services-grid,
+  .home-specialties-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .carebridge-doctors-preview
-        > .container
-        > .row:first-child
-        > div:last-child {
-        margin-top: 24px;
-        text-align: left !important;
-    }
+  .home-centered-heading h2,
+  .home-services-heading h2,
+  .home-specialties-heading h2 {
+    font-size: 37px;
+  }
 
-    .carebridge-appointment-section {
-        padding: 54px 0;
-    }
+  .home-section-heading-left h2 {
+    font-size: 42px;
+  }
+
+  .home-cta {
+    padding: 35px 0;
+  }
+
+  .home-cta-box {
+    min-height: 300px;
+    padding: 38px 24px;
+    border-radius: 18px;
+  }
+
+  .home-cta-box h2 {
+    font-size: 34px;
+  }
+
+  .home-cta-box p {
+    max-width: 500px;
+    font-size: 12px;
+  }
+
+  .home-outline-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 575px) {
-    .carebridge-home-intro h1 {
-        font-size: 38px;
-    }
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: 680px;
+  }
 
-    .home-trust-details {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
+  .home-hero-image {
+    height: 480px;
+    object-position: center 25%;
+  }
 
-    .home-trust-details > div,
-    .home-trust-details > div:first-child {
-        min-width: 0;
-        padding: 0 0 0 16px;
-        border-left: 2px solid #aec8c5;
-    }
+  .home-hero-content {
+    min-height: 680px;
+  }
 
-    .home-banner-wrapper {
-        height: 290px;
-    }
+  .home-hero h1 {
+    font-size: 42px;
+  }
 
-    .carebridge-section-heading h2,
-    .carebridge-doctors-preview h2,
-    .carebridge-appointment-section h2 {
-        font-size: 32px;
-    }
+  .home-hero-copy > p {
+    font-size: 14px;
+  }
 
-    .carebridge-card-icon,
-    .doctor-info-icon {
-        width: 54px;
-        height: 54px;
-        font-size: 25px;
-    }
+  .home-stats-grid strong {
+    font-size: 27px;
+  }
 
-    .carebridge-feature-card .card-title,
-    .carebridge-service-card .card-title,
-    .doctor-info-card .card-title {
-        font-size: 19px;
-    }
+  .home-section-heading-left h2 {
+    font-size: 37px;
+  }
+
+  .home-centered-heading h2,
+  .home-services-heading h2,
+  .home-specialties-heading h2 {
+    font-size: 33px;
+  }
+
+  .home-cta-box {
+    min-height: 290px;
+    padding: 35px 20px;
+  }
+
+  .home-cta-box h2 {
+    font-size: 31px;
+    letter-spacing: -1.5px;
+  }
+
+  .home-cta-box p {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .home-cta-box > div::after {
+    margin-top: 18px;
+  }
 }

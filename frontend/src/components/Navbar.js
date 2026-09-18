@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/cblogo.png";
+import "./Navbar.css";
 
 function NavigationBar() {
     return (
@@ -18,19 +20,11 @@ function NavigationBar() {
                     to="/"
                     className="carebridge-brand"
                 >
-                    <span className="brand-icon">
-                        +
-                    </span>
-
-                    <span className="brand-text">
-                        <strong>
-                            CareBridge
-                        </strong>
-
-                        <small>
-                            Hospital
-                        </small>
-                    </span>
+                    <img
+                        src={logo}
+                        alt="CareBridge Hospital"
+                        className="carebridge-logo"
+                    />
                 </Navbar.Brand>
 
                 <Navbar.Toggle

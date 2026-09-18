@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -50,6 +51,34 @@ public class AppointmentRestController {
     @GetMapping
     public List<Appointment> getAllAppointments() {
         return appointmentRepository.findAll();
+    }
+
+    @GetMapping("/by-phone")
+    public ResponseEntity<?> getAppointmentsByPhone(
+            @RequestParam String phone) {
+
+        String normalizedPhone = normalizePhone(phone);
+
+        if (normalizedPhone.isEmpty()) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("Phone number is required.");
+        }
+
+        List<AppointmentStatusResponse> appointments =
+                appointmentRepository
+                        .findByPatientPhone(normalizedPhone)
+                        .stream()
+                        .map(this::toStatusResponse)
+                        .toList();
+
+        if (appointments.isEmpty()) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body("No appointments found for this phone number.");
+        }
+
+        return ResponseEntity.ok(appointments);
     }
 
     @GetMapping("/{id}")
@@ -465,5 +494,39 @@ public class AppointmentRestController {
         appointmentRepository.deleteById(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    private String normalizePhone(String phone) {
+        return phone.replaceAll("\\D", "");
+    }
+
+    private AppointmentStatusResponse toStatusResponse(
+            Appointment appointment) {
+
+        Patient patient = appointment.getPatient();
+        Doctor doctor = appointment.getDoctor();
+
+        return new AppointmentStatusResponse(
+                appointment.getId(),
+                patient != null ? patient.getName() : null,
+                doctor != null ? doctor.getName() : null,
+                doctor != null ? doctor.getSpecialization() : null,
+                appointment.getAppointmentDate(),
+                appointment.getAppointmentTime(),
+                appointment.getReason(),
+                appointment.getStatus()
+        );
+    }
+
+    private record AppointmentStatusResponse(
+            Long id,
+            String patientName,
+            String doctorName,
+            String specialization,
+            String appointmentDate,
+            String appointmentTime,
+            String reason,
+            String status
+    ) {
     }
 }
