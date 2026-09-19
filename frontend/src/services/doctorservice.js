@@ -1,10 +1,13 @@
+/* frontend/src/services/doctorservice.js */
 
-const API_URL =
-  `${process.env.REACT_APP_API_URL}/doctors`;
+const API_URL = `${process.env.REACT_APP_API_URL}/doctors`;
 
 export async function getDoctors() {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+  }, 60000);
 
   try {
     const response = await fetch(API_URL, {
